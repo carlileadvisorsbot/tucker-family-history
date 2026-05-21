@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tucker Carlile Family History</title>
+  <title>Tucker’s Family Tree</title>
   <meta name="description" content="A private family history draft for the Carlile, Nelson, Tucker, Miller, Turpin, Andrews, and Huntington lines." />
   <style>
     :root {
@@ -100,6 +100,10 @@
       .stat-grid { grid-template-columns: 1fr; }
       .section-title { display: block; }
       .sources { columns: 1; }
+
+      .side-picker, .branch-grid { grid-template-columns: 1fr; }
+      .tree-generation, .tree-generation.parents { grid-template-columns: 1fr; }
+
       .bar { grid-template-columns: 1fr 42px; }
       .bar span:first-child { grid-column: 1 / -1; }
     }
@@ -121,6 +125,31 @@
     .lock-error { min-height: 1.4em; color: #9f1239; font-weight: 750; margin-top: 10px; }
     .lock-fine { font-size: .86rem; color: #7b8490; margin-top: 16px; }
 
+
+    .side-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+    .side-button { display: block; text-decoration: none; color: var(--ink); padding: 20px; border-radius: 22px; background: #fffdf8; border: 1px solid rgba(184,137,59,.28); box-shadow: 0 10px 30px rgba(40,32,20,.06); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+    .side-button:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(40,32,20,.12); border-color: rgba(184,137,59,.58); }
+    .side-button small { display: block; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 850; }
+    .side-button b { display: block; font-family: var(--serif); font-size: 1.55rem; margin-top: 4px; color: var(--green); }
+    .side-button span { display: block; color: var(--muted); margin-top: 5px; font-size: .92rem; }
+    .visual-tree { display: grid; gap: 18px; }
+    .tree-generation { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+    .tree-generation.parents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tree-person { position: relative; padding: 18px; border-radius: 22px; background: rgba(255,250,241,.95); border: 1px solid var(--line); box-shadow: 0 12px 34px rgba(40,32,20,.06); min-height: 118px; }
+    .tree-person.root { text-align: center; background: linear-gradient(145deg, #334e3b, #243b53); color: #fffaf1; border: 0; }
+    .tree-person.root .years, .tree-person.root p { color: rgba(255,250,241,.78); }
+    .tree-person h3 { font-family: var(--serif); font-size: 1.25rem; margin: 0 0 5px; }
+    .tree-person .years { color: var(--gold); font-weight: 850; font-size: .9rem; }
+    .tree-person p { margin: 8px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.4; }
+    .tree-label { text-align: center; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 900; margin: 4px 0 -4px; }
+    .branch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .branch-card { position: relative; overflow: hidden; padding: 24px; border-radius: 28px; border: 1px solid var(--line); background: rgba(255,250,241,.92); box-shadow: var(--shadow); }
+    .branch-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 7px; background: linear-gradient(180deg, var(--gold), var(--green)); }
+    .branch-card h3 { font-family: var(--serif); font-size: 1.8rem; margin-bottom: 6px; }
+    .branch-list { display: grid; gap: 10px; margin-top: 16px; }
+    .branch-item { padding: 12px 14px; border-radius: 16px; background: rgba(239,225,198,.32); border: 1px solid rgba(31,41,51,.08); }
+    .branch-item b { color: var(--green); }
+
   </style>
 </head>
 <body>
@@ -128,10 +157,10 @@
   <div id="lockScreen" class="lock-screen" aria-label="Family password screen">
     <form class="lock-card" id="lockForm">
       <div class="eyebrow">Private family page</div>
-      <h2>Carlile Family History</h2>
-      <p>Enter the family password to view the story.</p>
+      <h2>Tucker’s Family Tree</h2>
+      <p>Enter the family password to view the tree.</p>
       <input id="passwordInput" class="lock-input" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Password" autofocus />
-      <button class="lock-button" type="submit">Unlock the family story</button>
+      <button class="lock-button" type="submit">Unlock the family tree</button>
       <div id="lockError" class="lock-error"></div>
       <div class="lock-fine">Hint: it’s the simple family password Tucker gave you.</div>
     </form>
@@ -140,14 +169,18 @@
   <header class="hero">
     <div class="wrap">
       <div class="eyebrow">Private family history draft</div>
-      <h1>The Carlile Family Story</h1>
-      <p class="subtitle">A clean, source-backed working history of Tucker Carlile’s family lines — Carlile, Huntington, Turpin, Andrews, Nelson, Tucker, Miller, Bucher, and more.</p>
+      <h1>Tucker’s Family Tree</h1>
+      <p class="subtitle">A clean, source-backed family tree for Tucker — built to explore the Carlile, Huntington, Turpin, Andrews, Nelson, Tucker, Miller, and Bucher lines.</p>
       <div class="hero-card">
         <div class="hero-grid">
           <div class="hero-panel">
             <span class="tag confirmed">Current state</span>
-            <h2 style="font-size:clamp(1.8rem,3vw,2.8rem)">A real first draft, not just family lore.</h2>
+            <h2 style="font-size:clamp(1.8rem,3vw,2.8rem)">A beautiful family tree, grounded in real records.</h2>
             <p>Over several research passes, the tree moved from uncertain names to a documented family-history draft with obituaries, alumni records, cemetery leads, and family confirmations. Some older branches still need archival proof, but the core story is now strong enough to share privately with family.</p>
+            <div class="side-picker">
+              <a class="side-button" href="#tara-side"><small>Mom’s side</small><b>Tara’s Line</b><span>Nelson, Tucker, Miller, Bucher</span></a>
+              <a class="side-button" href="#hunter-side"><small>Dad’s side</small><b>Hunter’s Line</b><span>Carlile, Huntington, Turpin, Andrews</span></a>
+            </div>
           </div>
           <div class="hero-panel">
             <div class="stat-grid">
@@ -165,8 +198,8 @@
   <nav class="toc">
     <div class="wrap">
       <a href="#snapshot">Snapshot</a>
-      <a href="#maternal">Maternal</a>
-      <a href="#paternal">Paternal</a>
+      <a href="#tara-side">Tara’s Side</a>
+      <a href="#hunter-side">Hunter’s Side</a>
       <a href="#places">Places</a>
       <a href="#dna">DNA</a>
       <a href="#confidence">Confidence</a>
@@ -182,28 +215,36 @@
           <h2>Direct Ancestor Snapshot</h2>
           <p class="section-note">A simplified view of the core line. Some living-person details are omitted or softened for privacy.</p>
         </div>
-        <div class="tree-box"><pre>Tucker Andrews Carlile
-├── Father: Andrew/Andrews Huntington Carlile
-│   ├── Robert H. / Robert Huntington Carlile (1941–2024)
-│   │   └── William Arthur Carlile Jr. + Mary [maiden unknown]
-│   │       └── William Arthur Carlile + Ruth Huntington Carlile
-│   └── Allene “Lena” Turpin Carlile (1943–2021)
-│       ├── William Garnett Turpin
-│       └── Lucille Foster Andrews Turpin
-└── Mother: Tara Christine Nelson
-    ├── Jerry Nelson (1938–2021)
-    │   ├── Denzel / Denzil Nelson (1907–1977 lead)
-    │   └── Lena Williamson Nelson (d. likely early 1939)
-    └── Jo / JoAnn Williams / Jo Nelson
-        ├── Edison C. Tucker (1911–1969)
-        └── Mary E. Miller Tucker Bucher (1916–2015)</pre></div>
+        <div class="visual-tree">
+          <div class="tree-label">Tucker</div>
+          <div class="tree-generation parents" style="grid-template-columns:1fr;max-width:520px;margin:0 auto;width:100%">
+            <div class="tree-person root"><h3>Tucker Andrews Carlile</h3><div class="years">Living</div><p>The center point where the Carlile, Nelson, Tucker, Miller, Turpin, Andrews, and Huntington lines meet.</p></div>
+          </div>
+          <div class="tree-label">Parents</div>
+          <div class="tree-generation parents">
+            <div class="tree-person"><h3>Andrew / Hunter Carlile</h3><div class="years">Father’s side</div><p>Carlile, Huntington, Turpin, and Andrews lines.</p></div>
+            <div class="tree-person"><h3>Tara Christine Nelson</h3><div class="years">Mother’s side</div><p>Nelson, Tucker, Miller, Bucher, Williamson, and Eiler lines.</p></div>
+          </div>
+          <div class="tree-label">Grandparents</div>
+          <div class="tree-generation">
+            <div class="tree-person"><h3>Robert H. Carlile</h3><div class="years">1941–2024</div><p>Boyne City / Walloon Lake; Columbus Academy and Princeton family cluster.</p></div>
+            <div class="tree-person"><h3>Allene “Lena” Turpin Carlile</h3><div class="years">1943–2021</div><p>Richmond, Virginia to Grosse Pointe; Turpin and Andrews roots.</p></div>
+            <div class="tree-person"><h3>Jerry Nelson</h3><div class="years">1938–2021</div><p>Warsaw and Winona Lake; Nelson Beverage and Kosciusko County roots.</p></div>
+            <div class="tree-person"><h3>Jo / JoAnn Williams</h3><div class="years">Living/private</div><p>Grandma Jo; connects the family to Mary Miller Tucker Bucher and Edison Tucker.</p></div>
+          </div>
+          <div class="tree-label">Great-grandparent anchors</div>
+          <div class="branch-grid">
+            <div class="branch-card" id="hunter-side"><h3>Hunter’s Carlile Side</h3><p>The polished paternal story: Ohio roots, Princeton, Walloon Lake, manufacturing, and Virginia Turpin/Andrews history.</p><div class="branch-list"><div class="branch-item"><b>William Arthur Carlile Jr. + Mary Carlile</b><br/>Robert’s family-confirmed parents.</div><div class="branch-item"><b>William Arthur Carlile + Ruth Huntington</b><br/>Columbus, Ohio; the Huntington surname explains the family middle-name thread.</div><div class="branch-item"><b>William Garnett Turpin + Lucille Foster Andrews</b><br/>Allene/Lena’s parents; Virginia line.</div></div></div>
+            <div class="branch-card" id="tara-side"><h3>Tara’s Nelson Side</h3><p>The polished maternal story: northern Indiana, Nelson Beverage, Mentone, Claypool, Atwood, and confirmed Tucker/Miller records.</p><div class="branch-list"><div class="branch-item"><b>Denzel / Denzil Nelson + Lena Williamson</b><br/>Jerry Nelson’s parents; direct Denzel/Lena records still being pursued.</div><div class="branch-item"><b>Edison C. Tucker + Mary E. Miller Tucker Bucher</b><br/>Direct obituaries confirm the Grandma Jo line.</div><div class="branch-item"><b>Cloyce Miller + Roxie Parker</b><br/>Mary’s parents, confirmed by her obituary.</div></div></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="maternal">
       <div class="wrap">
         <div class="section-title">
-          <h2>Maternal Line</h2>
+          <h2>Tara’s Side — Nelson / Tucker / Miller</h2>
           <p class="section-note">The Nelson, Tucker, Miller, Bucher, Williamson, and Eiler side is heavily rooted in northern Indiana.</p>
         </div>
         <div class="cards">
@@ -218,7 +259,7 @@
     <section id="paternal">
       <div class="wrap">
         <div class="section-title">
-          <h2>Paternal Line</h2>
+          <h2>Hunter’s Side — Carlile / Huntington / Turpin</h2>
           <p class="section-note">The Carlile/Huntington line connects Columbus, Princeton, Walloon Lake, and an Ohio manufacturing/business world.</p>
         </div>
         <div class="cards">
