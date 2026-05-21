@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tucker’s Family Tree</title>
   <meta name="description" content="A private family history draft for the Carlile, Nelson, Tucker, Miller, Turpin, Andrews, and Huntington lines." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     :root {
       --bg: #f7f2e9;
@@ -165,6 +166,12 @@
     .map-stage { position: relative; overflow: hidden; border-radius: 30px; border: 1px solid rgba(31,41,51,.12); background: linear-gradient(145deg, rgba(36,59,83,.08), rgba(184,137,59,.12)); padding: 20px; box-shadow: var(--shadow); }
     .map-stage::before { content: ''; position: absolute; inset: 0; opacity: .28; background-image: radial-gradient(circle at 18% 30%, rgba(51,78,59,.34) 0 5px, transparent 6px), radial-gradient(circle at 47% 48%, rgba(184,137,59,.42) 0 6px, transparent 7px), radial-gradient(circle at 70% 24%, rgba(36,59,83,.30) 0 5px, transparent 6px), radial-gradient(circle at 82% 62%, rgba(51,78,59,.28) 0 5px, transparent 6px), linear-gradient(120deg, transparent 0 18%, rgba(51,78,59,.12) 18.2%, transparent 18.7% 44%, rgba(184,137,59,.12) 44.2%, transparent 44.8%); pointer-events: none; }
     .map-stage > * { position: relative; }
+    #familyMap { height: min(58vh, 520px); min-height: 360px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(31,41,51,.14); box-shadow: inset 0 0 0 1px rgba(255,250,241,.45), 0 16px 50px rgba(40,32,20,.10); background: #e8efe4; margin-bottom: 16px; }
+    .map-privacy-note { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; margin: 0 0 16px; padding: 12px 14px; border-radius: 18px; background: rgba(255,250,241,.82); border: 1px solid rgba(31,41,51,.10); color: var(--muted); font-size: .88rem; }
+    .map-privacy-note b { color: var(--green); }
+    .leaflet-popup-content-wrapper { border-radius: 16px; box-shadow: 0 18px 50px rgba(31,41,51,.22); }
+    .leaflet-popup-content { font-family: var(--sans); color: var(--ink); line-height: 1.45; }
+    .leaflet-popup-content b { color: var(--green); }
     .place { min-height: 188px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .18s ease, box-shadow .18s ease; }
     .place:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(40,32,20,.10); }
     .place small { display: inline-flex; margin-bottom: 8px; color: #7a5416; font-weight: 850; font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; }
@@ -269,6 +276,7 @@
       .profile-trigger, .mini-button { min-height: 44px; width: 100%; justify-content: center; }
 
       .map-stage { margin-inline: -2px; padding: 12px; border-radius: 24px; }
+      #familyMap { min-height: 320px; height: 54vh; border-radius: 20px; }
       .place { min-height: 0; padding: 18px; }
       .place h3 { font-size: 1.2rem; }
       .place p { margin-bottom: 0; }
@@ -376,12 +384,12 @@
             <div class="tree-person"><h3>Robert H. Carlile</h3><div class="years">1941–2024</div><p>Boyne City / Walloon Lake; Columbus Academy and Princeton family cluster.</p></div>
             <div class="tree-person"><h3>Allene “Lena” Turpin Carlile</h3><div class="years">1943–2021</div><p>Richmond, Virginia to Grosse Pointe; Turpin and Andrews roots.</p></div>
             <div class="tree-person"><h3>Jerry Nelson</h3><div class="years">1938–2021</div><p>Warsaw and Winona Lake; Nelson Beverage and Kosciusko County roots.</p></div>
-            <div class="tree-person"><h3>Jo / JoAnn Williams</h3><div class="years">Living/private</div><p>Grandma Jo; connects the family to Mary Miller Tucker Bucher and Edison Tucker.</p></div>
+            <div class="tree-person"><h3>Grandma Jo / JoAnn Williams</h3><div class="years">Living/private</div><p>Spelled JoAnn in the public obituary records; Grandma Jo connects this branch to Mary E. Miller Tucker Bucher and Edison C. Tucker.</p></div>
           </div>
           <div class="tree-label">Great-grandparent anchors</div>
           <div class="branch-grid">
             <div class="branch-card" id="hunter-side"><h3>Hunter’s Carlile Side</h3><p>The polished paternal story: Ohio roots, Princeton, Walloon Lake, manufacturing, and Virginia Turpin/Andrews history.</p><div class="branch-list"><div class="branch-item"><b>William Arthur Carlile Jr. + Mary Carlile</b><br/>Robert’s family-confirmed parents.</div><div class="branch-item"><b>William Arthur Carlile + Ruth Huntington</b><br/>Columbus, Ohio; the Huntington surname explains the family middle-name thread.</div><div class="branch-item"><b>William Garnett Turpin + Lucille Foster Andrews</b><br/>Allene/Lena’s parents; Virginia line.</div></div><div class="source-pills"><a href="https://rivercountrynews.com/william-randolph-billy-turpin-p19968-333.htm" target="_blank" rel="noopener noreferrer">Billy Turpin</a><a href="https://www.legacy.com/us/obituaries/name/wayland-andrews-obituary?id=27376460" target="_blank" rel="noopener noreferrer">Andrews bridge</a></div></div>
-            <div class="branch-card" id="tara-side"><h3>Tara’s Nelson Side</h3><p>The polished maternal story: northern Indiana, Nelson Beverage, Mentone, Claypool, Atwood, and confirmed Tucker/Miller records.</p><div class="branch-list"><div class="branch-item"><b>Denzel / Denzil Nelson + Lena Williamson</b><br/>Jerry Nelson’s parents; direct Denzel/Lena records still being pursued.</div><div class="branch-item"><b>Edison C. Tucker + Mary E. Miller Tucker Bucher</b><br/>Direct obituaries confirm the Grandma Jo line.</div><div class="branch-item"><b>Cloyce Miller + Roxie Parker</b><br/>Mary’s parents, confirmed by her obituary.</div></div></div>
+            <div class="branch-card" id="tara-side"><h3>Tara’s Nelson Side</h3><p>The polished maternal story: northern Indiana, Nelson Beverage, Mentone, Claypool, Atwood, and confirmed Tucker/Miller records.</p><div class="branch-list"><div class="branch-item"><b>Denzel / Denzil Nelson + Lena Williamson</b><br/>Jerry Nelson’s parents; direct Denzel/Lena records still being pursued.</div><div class="branch-item"><b>Edison C. Tucker + Mary E. Miller Tucker Bucher</b><br/>Direct obituaries confirm the Grandma Jo line. Current source-backed spelling is Bucher, not Bueher.</div><div class="branch-item"><b>Cloyce Miller + Roxie Parker</b><br/>Mary’s parents, confirmed by her obituary.</div></div></div>
           </div>
         </div>
       </div>
@@ -485,8 +493,10 @@
 
     <section id="places">
       <div class="wrap">
-        <div class="section-title"><h2>Places That Keep Appearing</h2><p class="section-note">A subtle map-like layer using town and county centers only — no private addresses, no exact cottage/property locations.</p></div>
+        <div class="section-title"><h2>Places That Keep Appearing</h2><p class="section-note">An open-source OpenStreetMap layer using town and county centers only — no private addresses, no exact cottage/property locations.</p></div>
         <div class="map-stage">
+          <div class="map-privacy-note"><span><b>Privacy rule:</b> pins are approximate public place centers only.</span><span>OpenStreetMap + Leaflet</span></div>
+          <div id="familyMap" aria-label="Open-source map of recurring family places"></div>
           <div class="map-grid">
             <div class="place"><div><small>Maternal hub</small><h3>Warsaw / Winona Lake, Indiana</h3><p>Jerry Nelson was born in Warsaw and lived in the Winona Lake / Kosciusko County world. Mary E. Miller Tucker Bucher also died in Winona Lake.</p></div><div class="place-tags"><span>Nelson</span><span>Miller</span><span>Tucker</span></div></div>
             <div class="place"><div><small>Small-town roots</small><h3>Burket / Beaver Dam</h3><p>Denzel/Denzil Nelson appears in Burket-area records. Jerry graduated from Beaver Dam High School in 1956 before the farm, business, and golf chapters.</p></div><div class="place-tags"><span>Nelson</span><span>Williamson</span><span>Golf</span></div></div>
@@ -596,6 +606,7 @@
     </article>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     (function () {
       var PASSWORD = '9898';
@@ -634,6 +645,43 @@
       "william-arthur-carlile-jr": { name: "William Arthur Carlile Jr. + Mary Carlile", side: "Hunter’s side", confidence: "Family-confirmed / source-supported", confidenceClass: "confirmed", lifespan: "William Jr.: born Dec. 10, 1913 lead; Mary: maiden name still unknown", relationship: "Tucker’s paternal great-grandparent anchor for Robert’s line", summary: "William Arthur Carlile Jr. and Mary Carlile are the family-confirmed parents of Robert H. Carlile. The strongest public bridge comes through William Harlow Carlile’s Princeton memorial and obituary, which name Mary and William A. Carlile Jr. and identify siblings Robert and Molly.", facts: [["William Jr.", "Columbus Academy / Hun School / Princeton Class of 1936"], ["Business clue", "Expected to work in steel/iron manufacturing with Columbus Bolt Works"], ["Children/source cluster", "Robert, William Harlow, and Molly Carlile"]], places: ["Columbus", "Columbus Academy", "Princeton", "Hun School"], why: ["Bridges Robert to the older Carlile/Huntington family.", "Explains the Princeton and Columbus Academy cluster.", "Keeps Mary’s maiden name as the important open gap."], family: ["William Jr. is son of William Arthur Carlile + Ruth Huntington Carlile", "Parents of Robert H. Carlile by family confirmation and public sibling bridge"], sources: [["William Harlow memorial", "https://paw.princeton.edu/memorial/william-h-carlile-73"], ["William Harlow obituary", "https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027"], ["Princeton Nassau Herald", "https://www.e-yearbook.com/yearbooks/Princeton_University_Nassau_Herald_Yearbook/1936/Page_1.html"]], open: ["Find Mary’s maiden name and obituary.", "Find a direct public record naming Robert H. Carlile’s parents."] },
       "william-ruth-carlile": { name: "William Arthur Carlile + Ruth Huntington Carlile", side: "Hunter’s side", confidence: "Strongly supported / family-confirmed", confidenceClass: "confirmed", lifespan: "William: 1884–1960 lead; Ruth: 1889–1975 lead", relationship: "Upstream paternal Carlile/Huntington anchors", summary: "William Arthur Carlile and Ruth Huntington Carlile are the upstream Columbus, Ohio anchors that explain much of the father-side story: the Huntington surname, Columbus roots, Princeton, Columbus Academy, Green Lawn Cemetery, Walloon Lake, and business/manufacturing clues.", facts: [["William Arthur Carlile", "Nov. 20, 1884 – Feb. 24, 1960 lead; Green Lawn Cemetery"], ["Ruth Huntington Carlile", "Sept. 13, 1889 – Oct. 5, 1975 lead; Green Lawn Cemetery"], ["Ruth’s parents", "Webster Perit Huntington + Anna Harlow Huntington"]], places: ["Columbus", "Green Lawn Cemetery", "Columbus Academy", "Walloon Lake"], why: ["Explains the recurring Huntington name.", "Provides the older Ohio foundation for the Carlile side.", "Connects cemetery, school, Princeton, and business clues."], family: ["Parents of William Arthur Carlile Jr. and John Webster Carlile", "Connected to William S. Carlile + Abbie Theresa Jane Cott Carlile lead"], sources: [["Green Lawn Cemetery", "https://www.genealogybug.net/Franklin_Cemeteries/greenlawn/h/grnlwn_h.htm"], ["Huntington genealogy PDF", "https://www.cga.ct.gov/hco/books/The_Huntington_Family_in_America.pdf"], ["John Webster memorial", "https://paw.princeton.edu/memorial/john-webster-carlile-38"], ["John Webster obituary", "https://www.hallwynne.com/obituaries/johneebster-carlile"]], open: ["Verify older Carlile and Huntington records with originals.", "Find William A. Carlile Jr.’s obituary and Mary’s maiden name."] }
     };
+
+    var FAMILY_PLACES = [
+      { name: "Warsaw, Indiana", coords: [41.2381, -85.8530], lines: "Nelson", story: "Maternal hub for Jerry Nelson and the Warsaw / Winona Lake / Kosciusko County records." },
+      { name: "Winona Lake, Indiana", coords: [41.2273, -85.8219], lines: "Nelson · Miller · Tucker · Bucher", story: "Mary E. Miller Tucker Bucher died here in 2015; Jerry Nelson's later-life records also circle this area." },
+      { name: "Mentone, Indiana", coords: [41.1737, -86.0347], lines: "Tucker · Miller · Bucher", story: "Edison C. Tucker was born in Mentone, and Mary is buried at Mentone Cemetery." },
+      { name: "Claypool, Indiana", coords: [41.1289, -85.8808], lines: "Miller · Tucker", story: "Mary E. Miller Tucker Bucher was born here and married Edison C. Tucker here in 1937." },
+      { name: "Atwood, Indiana", coords: [41.2609, -85.9753], lines: "Williams · Tucker/Bucher", story: "Quiet town-level clue for Grandma Jo / JoAnn Williams; living-person details stay minimized." },
+      { name: "Burket, Indiana", coords: [41.1547, -85.9695], lines: "Nelson", story: "Small-town Nelson clue around Denzel/Denzil Nelson and earlier Burket-area records." },
+      { name: "Beaver Dam, Indiana", coords: [41.0936, -85.9746], lines: "Nelson · Miller/Tucker/Bucher", story: "Jerry Nelson's high-school world and Mary Tucker's later marriage to C. Edward Bucher." },
+      { name: "Columbus, Ohio", coords: [39.9612, -82.9988], lines: "Carlile · Huntington", story: "Paternal Carlile/Huntington institutional hub: Columbus Academy, Green Lawn Cemetery, and business clues." },
+      { name: "Walloon Lake, Michigan", coords: [45.2667, -84.9339], lines: "Carlile", story: "Northern Michigan family-summer-place clue. No cottage or property addresses are shown." },
+      { name: "Boyne City, Michigan", coords: [45.2167, -85.0139], lines: "Carlile", story: "Robert H. Carlile's final public-record place." },
+      { name: "Richmond, Virginia", coords: [37.5407, -77.4360], lines: "Turpin · Andrews", story: "Allene “Lena” Turpin Carlile's birthplace and gateway into the Virginia branch." },
+      { name: "Essex County, Virginia", coords: [37.9333, -76.8667], lines: "Andrews · Turpin", story: "County-level deeper-roots marker for the Andrews/Turpin side." },
+      { name: "Princeton, New Jersey", coords: [40.3487, -74.6591], lines: "Carlile · Huntington", story: "Repeating educational institution in the paternal Carlile branch." }
+    ];
+    (function () {
+      var el = document.getElementById('familyMap');
+      if (!el || !window.L) return;
+      var map = L.map(el, { scrollWheelZoom: false, worldCopyJump: true }).setView([39.8, -84.9], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 12,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      var greenIcon = L.divIcon({
+        className: 'family-place-marker',
+        html: '<span style="display:block;width:18px;height:18px;border-radius:999px;background:#334e3b;border:3px solid #fffaf1;box-shadow:0 6px 18px rgba(31,41,51,.28)"></span>',
+        iconSize: [18,18],
+        iconAnchor: [9,9]
+      });
+      var markers = FAMILY_PLACES.map(function (place) {
+        return L.marker(place.coords, { icon: greenIcon, title: place.name }).bindPopup('<b>'+place.name+'</b><br><em>'+place.lines+'</em><br>'+place.story).addTo(map);
+      });
+      var group = L.featureGroup(markers);
+      map.fitBounds(group.getBounds().pad(0.16));
+    })();
+
     (function () {
       var modal = document.getElementById('personModal');
       var content = document.getElementById('personModalContent');
