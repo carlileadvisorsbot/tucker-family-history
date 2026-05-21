@@ -198,6 +198,68 @@
     .mini-button.secondary { background: #fffaf1; color: #334e3b; border: 1px solid rgba(51,78,59,.2); }
     .tiny-note { color: var(--muted); font-size: .86rem; }
 
+
+    /* Mobile polish pass: phone layout should feel designed, not squeezed. */
+    @media (max-width: 700px) {
+      :root { --radius: 20px; --shadow: 0 14px 38px rgba(40, 32, 20, .10); }
+      html { scroll-padding-top: calc(62px + env(safe-area-inset-top)); }
+      body { overflow-x: hidden; padding-bottom: calc(26px + env(safe-area-inset-bottom)); }
+      .wrap { width: min(100% - 24px, 1120px); }
+      header.hero { padding: calc(42px + env(safe-area-inset-top)) 0 24px; }
+      h1 { font-size: clamp(2.75rem, 15vw, 4.45rem); letter-spacing: -.055em; }
+      h2 { font-size: clamp(2rem, 10vw, 2.75rem); }
+      section { padding: 38px 0; }
+      .subtitle { font-size: 1.04rem; margin-top: 16px; }
+
+      nav.toc { top: 0; padding-top: env(safe-area-inset-top); box-shadow: 0 10px 30px rgba(40,32,20,.08); }
+      nav.toc::after { content: ''; position: absolute; top: env(safe-area-inset-top); right: 0; bottom: 0; width: 42px; pointer-events: none; background: linear-gradient(90deg, rgba(247,242,233,0), rgba(247,242,233,.96)); }
+      nav.toc .wrap { width: 100%; padding: 9px 12px; gap: 8px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      nav.toc .wrap::-webkit-scrollbar { display: none; }
+      nav.toc a { scroll-snap-align: start; background: rgba(255,250,241,.62); border-color: rgba(31,41,51,.08); padding: 8px 12px; font-size: .86rem; }
+
+      .hero-card { border-radius: 22px; margin-top: 24px; }
+      .hero-panel { padding: 22px; }
+      .stat-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+      .stat { padding: 13px 10px; }
+      .stat b { font-size: 1.45rem; }
+      .stat span { font-size: .72rem; line-height: 1.25; }
+
+      .side-picker, .branch-grid, .tree-generation, .tree-generation.parents, .cards, .split, .map-grid { grid-template-columns: 1fr !important; }
+      .visual-tree { gap: 14px; }
+      .tree-label { margin: 12px 0 -2px; font-size: .72rem; letter-spacing: .11em; text-align: left; padding-left: 4px; }
+      .tree-person, .branch-card, .card, .place { border-radius: 20px; box-shadow: 0 10px 28px rgba(40,32,20,.065); }
+      .tree-person { min-height: 0; padding: 16px; }
+      .tree-person h3 { font-size: 1.12rem; }
+      .tree-person p { font-size: .86rem; }
+      .branch-card { padding: 20px 18px 18px; }
+      .branch-card::before { width: 4px; }
+      .branch-card h3 { font-size: 1.55rem; }
+      .branch-list { gap: 8px; }
+      .branch-item { padding: 11px 12px; }
+
+      .card { padding: 20px; }
+      .card:hover, .place:hover, .side-button:hover { transform: none; }
+      .card h3 { font-size: 1.4rem; }
+      .source-pills a, .source-pill { max-width: 100%; overflow-wrap: anywhere; font-size: .78rem; padding: 7px 9px; }
+      .profile-trigger, .mini-button { min-height: 44px; width: 100%; justify-content: center; }
+
+      .map-stage { margin-inline: -2px; padding: 12px; border-radius: 24px; }
+      .place { min-height: 0; padding: 18px; }
+      .place h3 { font-size: 1.2rem; }
+      .place p { margin-bottom: 0; }
+
+      .person-modal { align-items: end; padding: env(safe-area-inset-top) 0 0; }
+      .person-modal__panel { width: 100%; max-height: calc(100dvh - env(safe-area-inset-top)); border-radius: 26px 26px 0 0; padding: 22px 18px calc(24px + env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+      .person-modal__close { top: 8px; width: 46px; height: 46px; }
+      .modal-title { margin-right: 52px; font-size: clamp(2rem, 11vw, 3rem); }
+      .modal-sub { font-size: .96rem; }
+      .modal-grid { grid-template-columns: 1fr; gap: 12px; }
+      .modal-box { padding: 16px; }
+      .fact-list div { grid-template-columns: 1fr; gap: 2px; }
+      .modal-sources a { width: 100%; justify-content: center; }
+      footer { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+    }
+
   </style>
 </head>
 <body>
