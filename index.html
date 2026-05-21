@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tucker Carlile Family History</title>
+  <meta name="description" content="A private family history draft for the Carlile, Nelson, Tucker, Miller, Turpin, Andrews, and Huntington lines." />
+  <style>
+    :root {
+      --bg: #f7f2e9;
+      --paper: #fffaf1;
+      --ink: #1f2933;
+      --muted: #6b7280;
+      --gold: #b8893b;
+      --gold-soft: #efe1c6;
+      --green: #334e3b;
+      --green-2: #5a725f;
+      --blue: #243b53;
+      --line: rgba(31,41,51,.14);
+      --shadow: 0 24px 80px rgba(40, 32, 20, .14);
+      --radius: 24px;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184,137,59,.24), transparent 35rem),
+        radial-gradient(circle at top right, rgba(51,78,59,.18), transparent 34rem),
+        linear-gradient(180deg, #fbf5ea 0%, var(--bg) 45%, #f3eadb 100%);
+      line-height: 1.6;
+    }
+    a { color: #835f21; text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header.hero { padding: 72px 0 36px; }
+    .eyebrow { letter-spacing: .16em; text-transform: uppercase; color: var(--green); font-size: .78rem; font-weight: 800; }
+    h1, h2, h3 { line-height: 1.08; margin: 0; }
+    h1 { font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.8rem); letter-spacing: -.06em; max-width: 940px; }
+    .subtitle { font-size: clamp(1.05rem, 2vw, 1.35rem); color: #4b5563; max-width: 820px; margin-top: 22px; }
+    .hero-card {
+      margin-top: 34px;
+      background: rgba(255,250,241,.82);
+      border: 1px solid rgba(184,137,59,.28);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .9fr; gap: 0; }
+    .hero-panel { padding: 34px; }
+    .hero-panel + .hero-panel { border-left: 1px solid var(--line); background: rgba(239,225,198,.3); }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
+    .stat { padding: 18px; border-radius: 18px; background: #fffdf8; border: 1px solid var(--line); }
+    .stat b { display: block; font-size: 1.7rem; font-family: var(--serif); color: var(--green); }
+    .stat span { color: var(--muted); font-size: .86rem; }
+    nav.toc { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(18px); background: rgba(247,242,233,.76); border-block: 1px solid var(--line); }
+    nav.toc .wrap { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; }
+    nav.toc a { white-space: nowrap; text-decoration: none; color: var(--ink); padding: 9px 13px; border-radius: 999px; font-size: .9rem; border: 1px solid transparent; }
+    nav.toc a:hover { background: #fffaf1; border-color: var(--line); }
+    section { padding: 54px 0; }
+    .section-title { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+    h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.035em; }
+    .section-note { color: var(--muted); max-width: 520px; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .card { background: rgba(255,250,241,.9); border: 1px solid var(--line); border-radius: 22px; padding: 24px; box-shadow: 0 12px 40px rgba(40,32,20,.07); }
+    .card h3 { font-family: var(--serif); font-size: 1.55rem; margin-bottom: 8px; }
+    .tag { display: inline-flex; align-items: center; gap: 6px; font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; margin-bottom: 12px; }
+    .confirmed { background: #dff0e4; color: #1f5130; }
+    .high { background: #fff0cc; color: #7a5416; }
+    .hypothesis { background: #e6edf7; color: #294869; }
+    .private { background: #f2e4e4; color: #7b2d2d; }
+    .tree-box { background: #18251d; color: #f9f4e9; border-radius: 24px; padding: 26px; overflow-x: auto; box-shadow: var(--shadow); }
+    .tree-box pre { margin: 0; font-family: 'SFMono-Regular', Consolas, monospace; font-size: .9rem; line-height: 1.55; }
+    .timeline { position: relative; display: grid; gap: 16px; }
+    .timeline::before { content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 2px; background: var(--gold-soft); }
+    .event { position: relative; padding-left: 48px; }
+    .event::before { content: ''; position: absolute; left: 6px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); border: 4px solid #fff7e8; }
+    .event b { color: var(--green); }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .map-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .place { min-height: 142px; background: linear-gradient(145deg, rgba(255,250,241,.96), rgba(239,225,198,.46)); border: 1px solid var(--line); border-radius: 22px; padding: 20px; }
+    .place h3 { font-size: 1.2rem; margin-bottom: 8px; font-family: var(--serif); }
+    .dna { display: grid; gap: 12px; }
+    .bar { display: grid; grid-template-columns: 165px 1fr 48px; align-items: center; gap: 12px; }
+    .bar-track { height: 12px; background: rgba(36,59,83,.11); border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--gold)); border-radius: 999px; }
+    details { background: rgba(255,250,241,.88); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 800; color: var(--blue); }
+    .sources { columns: 2; column-gap: 28px; color: #4b5563; font-size: .94rem; }
+    .sources li { break-inside: avoid; margin-bottom: 9px; }
+    footer { padding: 46px 0 70px; color: var(--muted); }
+    .callout { border-left: 5px solid var(--gold); background: rgba(255,250,241,.78); padding: 18px 20px; border-radius: 18px; }
+    @media (max-width: 800px) {
+      .hero-grid, .cards, .split, .map-grid { grid-template-columns: 1fr; }
+      .hero-panel + .hero-panel { border-left: 0; border-top: 1px solid var(--line); }
+      .stat-grid { grid-template-columns: 1fr; }
+      .section-title { display: block; }
+      .sources { columns: 1; }
+      .bar { grid-template-columns: 1fr 42px; }
+      .bar span:first-child { grid-column: 1 / -1; }
+    }
+    @media print {
+      nav.toc { position: static; }
+      body { background: white; }
+      .card, .hero-card, .tree-box { box-shadow: none; }
+      a { color: black; }
+    }
+
+    .lock-screen { position: fixed; inset: 0; z-index: 999; display: grid; place-items: center; padding: 22px; background: radial-gradient(circle at top left, rgba(184,137,59,.28), transparent 34rem), radial-gradient(circle at bottom right, rgba(51,78,59,.20), transparent 34rem), linear-gradient(180deg, #fbf5ea, #f3eadb); transition: opacity .35s ease, visibility .35s ease; }
+    .lock-screen.unlocked { opacity: 0; visibility: hidden; pointer-events: none; }
+    .lock-card { width: min(480px, 100%); background: rgba(255,250,241,.94); border: 1px solid rgba(31,41,51,.14); border-radius: 30px; padding: 34px; box-shadow: 0 30px 100px rgba(40,32,20,.18); text-align: left; }
+    .lock-card h2 { font-size: clamp(2rem, 8vw, 3.4rem); margin: 10px 0; }
+    .lock-card p { color: #5f6b76; }
+    .lock-input { width: 100%; font-size: 1.3rem; padding: 15px 16px; border-radius: 18px; border: 1px solid rgba(31,41,51,.18); background: white; margin: 14px 0 10px; outline: none; }
+    .lock-input:focus { border-color: rgba(184,137,59,.8); box-shadow: 0 0 0 4px rgba(184,137,59,.14); }
+    .lock-button { width: 100%; border: 0; border-radius: 18px; padding: 15px 18px; background: #334e3b; color: white; font-size: 1rem; font-weight: 850; cursor: pointer; }
+    .lock-error { min-height: 1.4em; color: #9f1239; font-weight: 750; margin-top: 10px; }
+    .lock-fine { font-size: .86rem; color: #7b8490; margin-top: 16px; }
+
+  </style>
+</head>
+<body>
+
+  <div id="lockScreen" class="lock-screen" aria-label="Family password screen">
+    <form class="lock-card" id="lockForm">
+      <div class="eyebrow">Private family page</div>
+      <h2>Carlile Family History</h2>
+      <p>Enter the family password to view the story.</p>
+      <input id="passwordInput" class="lock-input" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Password" autofocus />
+      <button class="lock-button" type="submit">Unlock the family story</button>
+      <div id="lockError" class="lock-error"></div>
+      <div class="lock-fine">Hint: it’s the simple family password Tucker gave you.</div>
+    </form>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Private family history draft</div>
+      <h1>The Carlile Family Story</h1>
+      <p class="subtitle">A clean, source-backed working history of Tucker Carlile’s family lines — Carlile, Huntington, Turpin, Andrews, Nelson, Tucker, Miller, Bucher, and more.</p>
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-panel">
+            <span class="tag confirmed">Current state</span>
+            <h2 style="font-size:clamp(1.8rem,3vw,2.8rem)">A real first draft, not just family lore.</h2>
+            <p>Over several research passes, the tree moved from uncertain names to a documented family-history draft with obituaries, alumni records, cemetery leads, and family confirmations. Some older branches still need archival proof, but the core story is now strong enough to share privately with family.</p>
+          </div>
+          <div class="hero-panel">
+            <div class="stat-grid">
+              <div class="stat"><b>1840s</b><span>oldest named Carlile lead so far</span></div>
+              <div class="stat"><b>3</b><span>main geography clusters</span></div>
+              <div class="stat"><b>11</b><span>DNA ancestry regions provided</span></div>
+            </div>
+            <p style="margin-top:18px;color:var(--muted);font-size:.92rem">Prepared as a private working page. Living-person details are intentionally minimized.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="wrap">
+      <a href="#snapshot">Snapshot</a>
+      <a href="#maternal">Maternal</a>
+      <a href="#paternal">Paternal</a>
+      <a href="#places">Places</a>
+      <a href="#dna">DNA</a>
+      <a href="#confidence">Confidence</a>
+      <a href="#sources">Sources</a>
+      <a href="#next">Next</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="snapshot">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Direct Ancestor Snapshot</h2>
+          <p class="section-note">A simplified view of the core line. Some living-person details are omitted or softened for privacy.</p>
+        </div>
+        <div class="tree-box"><pre>Tucker Andrews Carlile
+├── Father: Andrew/Andrews Huntington Carlile
+│   ├── Robert H. / Robert Huntington Carlile (1941–2024)
+│   │   └── William Arthur Carlile Jr. + Mary [maiden unknown]
+│   │       └── William Arthur Carlile + Ruth Huntington Carlile
+│   └── Allene “Lena” Turpin Carlile (1943–2021)
+│       ├── William Garnett Turpin
+│       └── Lucille Foster Andrews Turpin
+└── Mother: Tara Christine Nelson
+    ├── Jerry Nelson (1938–2021)
+    │   ├── Denzel / Denzil Nelson (1907–1977 lead)
+    │   └── Lena Williamson Nelson (d. likely early 1939)
+    └── Jo / JoAnn Williams / Jo Nelson
+        ├── Edison C. Tucker (1911–1969)
+        └── Mary E. Miller Tucker Bucher (1916–2015)</pre></div>
+      </div>
+    </section>
+
+    <section id="maternal">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Maternal Line</h2>
+          <p class="section-note">The Nelson, Tucker, Miller, Bucher, Williamson, and Eiler side is heavily rooted in northern Indiana.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><span class="tag confirmed">Confirmed</span><h3>Jerry Nelson</h3><p><strong>1938–2021.</strong> Born in Warsaw, Indiana; lifelong Kosciusko County / Winona Lake resident. His obituary anchors the Nelson line and names parents <strong>Denzel Nelson</strong> and <strong>Lena Williamson Nelson</strong>.</p><p>Jerry farmed locally and owned/operated Nelson Beverage. His story centers around Warsaw, Winona Lake, Beaver Dam, and Burket.</p></article>
+          <article class="card"><span class="tag high">Strong lead</span><h3>Denzel / Denzil Nelson + Lena Williamson</h3><p>Denzel/Denzil is confirmed as Jerry’s father, but his own 1977 obituary/death record is still missing. Lena is confirmed as Jerry’s mother; her likely death window is Jan.–Feb. 1939.</p><p>A strong but still indirect lead points to <strong>Masa G. Nelson + Mina Barkman Nelson</strong> as Denzel/Denzil’s parents.</p></article>
+          <article class="card"><span class="tag confirmed">Confirmed</span><h3>Mary E. Miller Tucker Bucher</h3><p><strong>1916–2015.</strong> Born in Claypool, Indiana; died in Winona Lake; buried at Mentone Cemetery. Her obituary confirms parents <strong>Cloyce Miller</strong> and <strong>Roxie Parker Miller</strong>.</p><p>She married <strong>Edison C. Tucker</strong> first, then <strong>C. Edward Bucher</strong>. Her obituary directly links Mary → JoAnn → Tara.</p></article>
+          <article class="card"><span class="tag confirmed">Confirmed</span><h3>Edison C. Tucker</h3><p><strong>1911–1969.</strong> Born in Mentone, Indiana; died in rural Mentone; buried at Mentone Cemetery. His obituary confirms parents <strong>Charles M. Tucker</strong> and <strong>Suzannah Eiler Tucker</strong>.</p><p>This opens the Tucker / Eiler branch for future research.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="paternal">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Paternal Line</h2>
+          <p class="section-note">The Carlile/Huntington line connects Columbus, Princeton, Walloon Lake, and an Ohio manufacturing/business world.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><span class="tag confirmed">Confirmed</span><h3>Robert H. Carlile</h3><p><strong>Oct. 29, 1941 – Mar. 16, 2024.</strong> Tucker provided the Stone Funeral Home obituary and confirmed Robert was his grandfather. Robert lived in the Boyne City / Northern Michigan area at the end of his life.</p><p>Family confirmation and public records tie him into the Robert H. / Robert Huntington Carlile, Columbus Academy, and Princeton cluster.</p></article>
+          <article class="card"><span class="tag confirmed">Family-confirmed</span><h3>William Arthur Carlile Jr. + Mary Carlile</h3><p>William Harlow Carlile’s Princeton memorial and obituary identify him as the youngest child of <strong>Mary and William A. Carlile Jr.</strong>, with siblings <strong>Robert</strong> and <strong>Molly</strong>.</p><p>Tucker’s dad confirmed Robert’s parents were correct. The remaining gap is Mary’s maiden name and a direct archival Robert parentage record.</p></article>
+          <article class="card"><span class="tag confirmed">Family-confirmed</span><h3>William Arthur Carlile + Ruth Huntington</h3><p>This Columbus, Ohio pair is the key upstream Carlile/Huntington anchor. The Huntington surname likely explains the recurring Huntington middle-name clue.</p><p>The family connects to Columbus Academy, Princeton, Green Lawn Cemetery, W. S. Carlile Sons Co., and Walloon Lake summer history.</p></article>
+          <article class="card"><span class="tag confirmed">Confirmed</span><h3>Allene “Lena” Turpin Carlile</h3><p><strong>1943–2021.</strong> Born in Richmond, Virginia; died in Grosse Pointe Park, Michigan. Her obituary names parents <strong>William G. Turpin</strong> and <strong>Lucille Andrews Turpin</strong>, and former husband <strong>Robert Carlile</strong>.</p><p>Her line opens into the Turpin / Andrews / Beazley cluster in Virginia.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="wrap split">
+        <div>
+          <h2>The Carlile-Huntington Breakthrough</h2>
+          <p>The Robert side originally had scattered clues: Princeton, Ohio, manufacturing, Huntington, Walloon Lake, and train/summer-house memories. Those clues converged around a Columbus, Ohio family: <strong>William Arthur Carlile + Ruth Huntington Carlile</strong>.</p>
+          <p>The strongest bridge came from William Harlow Carlile’s Princeton Alumni Weekly memorial, which says he followed his father William A. ’36, uncle John ’38, and brother Robert ’64 to Princeton. His obituary then identifies him as the youngest child of Mary and William A. Carlile Jr., with siblings Robert and Molly.</p>
+        </div>
+        <div class="callout">
+          <h3 style="font-family:var(--serif);font-size:1.5rem;margin:0 0 8px">Why that mattered</h3>
+          <p>It tied together almost every family-memory clue at once: Columbus Academy, Princeton, Ohio roots, manufacturing, Huntington as a family surname, and Walloon Lake summers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="places">
+      <div class="wrap">
+        <div class="section-title"><h2>Places That Keep Appearing</h2><p class="section-note">Family history starts to feel real when the same places keep showing up across independent records.</p></div>
+        <div class="map-grid">
+          <div class="place"><h3>Northern Indiana</h3><p>Warsaw, Winona Lake, Burket, Beaver Dam, Mentone, Atwood, Claypool, Kosciusko County, Fulton County.</p></div>
+          <div class="place"><h3>Ohio + Walloon</h3><p>Columbus, Bexley, Green Lawn Cemetery, Columbus Academy, Princeton links, Walloon Lake / Boyne City / Northern Michigan.</p></div>
+          <div class="place"><h3>Virginia</h3><p>Richmond and Essex County show up through Allene “Lena” Turpin Carlile, Lucille Foster Andrews, and the Andrews/Beazley branch.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dna">
+      <div class="wrap split">
+        <div>
+          <h2>DNA Context</h2>
+          <p>Tucker provided a 23andMe ethnicity/ancestry estimate. This is context, not proof of specific ancestors, but it fits the broad documentary direction so far.</p>
+        </div>
+        <div class="card dna">
+          <div class="bar"><span>England</span><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><strong>64%</strong></div>
+          <div class="bar"><span>Celtic & Gaelic</span><div class="bar-track"><div class="bar-fill" style="width:21%"></div></div><strong>21%</strong></div>
+          <div class="bar"><span>Southern Germanic Europe</span><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><strong>11%</strong></div>
+          <div class="bar"><span>Nordic</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><strong>3%</strong></div>
+          <div class="bar"><span>Ashkenazi Jewish</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><strong>1%</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="confidence">
+      <div class="wrap">
+        <div class="section-title"><h2>What’s Proven vs. Still Open</h2><p class="section-note">This keeps the page honest: strong findings are separated from research leads.</p></div>
+        <details open><summary>Confirmed / strong enough for the family story</summary><ul><li>Robert H. Carlile is Tucker’s paternal grandfather.</li><li>Robert’s placement under William Arthur Carlile Jr. + Mary is family-confirmed and supported by Princeton/obituary records.</li><li>Allene “Lena” Turpin Carlile is Tucker’s paternal grandmother.</li><li>Jerry Nelson is Tucker’s maternal grandfather.</li><li>Mary E. Miller Tucker Bucher and Edison C. Tucker are confirmed maternal great-grandparents through Grandma Jo.</li><li>William Arthur Carlile + Ruth Huntington Carlile are the correct upstream Carlile/Huntington cluster.</li></ul></details>
+        <details><summary>Still worth researching</summary><ul><li>Mary [unknown] Carlile’s maiden name and obituary.</li><li>A direct public record naming Robert H. Carlile’s parents.</li><li>Denzel/Denzil Nelson’s 1977 death/obituary/burial record.</li><li>Lena Williamson Nelson’s early-1939 obituary/death/burial record.</li><li>Direct records for William Garnett Turpin and Lucille Foster Andrews Turpin.</li><li>Older original records for William S. Carlile + Abbie Cott and the W. S. Carlile Sons Co. business history.</li></ul></details>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <div class="section-title"><h2>Source Highlights</h2><p class="section-note">The full research vault has more detail. These are the sources that carried the story.</p></div>
+        <ul class="sources">
+          <li><a href="https://www.stonefuneralhomeinc.com/obituary/Robert-Carlile">Stone Funeral Home obituary for Robert H. Carlile</a></li>
+          <li><a href="https://paw.princeton.edu/memorial/william-h-carlile-73">Princeton Alumni Weekly memorial for William H. Carlile ’73</a></li>
+          <li><a href="https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027">Legacy / Columbus Dispatch obituary for William Harlow Carlile</a></li>
+          <li><a href="https://paw.princeton.edu/memorial/john-webster-carlile-38">Princeton Alumni Weekly memorial for John Webster Carlile ’38</a></li>
+          <li><a href="https://www.titusfuneralhome.com/obituaries/jerry-nelson">Titus Funeral Home obituary for Jerry Nelson</a></li>
+          <li><a href="https://www.inkfreenews.com/2021/04/05/jerry-nelson/">InkFreeNews obituary for Jerry Nelson</a></li>
+          <li><a href="https://www.hartzlerfuneralservices.com/m/obituaries/Mary-Tucker-Bucher/">Hartzler Funeral Services obituary for Mary E. Tucker Bucher</a></li>
+          <li><a href="https://www.legacy.com/us/obituaries/toledoblade/name/allene-carlile-obituary?id=31834443">Legacy / The Blade obituary for Allene Carlile</a></li>
+          <li><a href="https://rivercountrynews.com/william-randolph-billy-turpin-p19968-333.htm">William Randolph “Billy” Turpin obituary</a></li>
+          <li><a href="https://www.legacy.com/us/obituaries/name/wayland-andrews-obituary?id=27376460">Wayland D. Andrews obituary</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="wrap">
+        <div class="hero-card"><div class="hero-panel">
+          <span class="tag high">Recommended next step</span>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.7rem)">Share this privately, then let family add memories.</h2>
+          <p>This page is strong enough to send around as a private family-history draft. The best improvements now will come from family corrections, old documents, Grandma’s memories, photos, funeral cards, and any missing names — especially Mary Carlile’s maiden name and older Nelson/Williamson details.</p>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Prepared for Tucker Carlile.</strong> Working private draft, generated from family testimony and public-source research. Last updated 2026-05-20.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var PASSWORD = '9898';
+      var screen = document.getElementById('lockScreen');
+      var form = document.getElementById('lockForm');
+      var input = document.getElementById('passwordInput');
+      var error = document.getElementById('lockError');
+      function unlock() {
+        sessionStorage.setItem('family-history-unlocked', 'yes');
+        screen.classList.add('unlocked');
+        document.body.style.overflow = '';
+      }
+      if (sessionStorage.getItem('family-history-unlocked') === 'yes') {
+        screen.classList.add('unlocked');
+      } else {
+        document.body.style.overflow = 'hidden';
+      }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if ((input.value || '').trim() === PASSWORD) unlock();
+        else {
+          error.textContent = 'Wrong password — try 9898.';
+          input.select();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
