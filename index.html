@@ -96,6 +96,29 @@
     .sources li { break-inside: avoid; margin-bottom: 9px; }
     footer { padding: 46px 0 70px; color: var(--muted); }
     .callout { border-left: 5px solid var(--gold); background: rgba(255,250,241,.78); padding: 18px 20px; border-radius: 18px; }
+    .vault { display: grid; gap: 16px; }
+    .vault details { padding: 18px 22px; }
+    .vault details > summary { font-family: var(--serif); font-size: 1.25rem; color: var(--green); font-weight: 800; padding: 4px 0; }
+    .vault details[open] > summary { margin-bottom: 14px; border-bottom: 1px dashed var(--line); padding-bottom: 12px; }
+    .vault .meta { color: var(--muted); font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; margin-bottom: 8px; }
+    .vault-doc { color: var(--ink); font-size: .98rem; line-height: 1.65; }
+    .vault-doc h4 { font-family: var(--serif); font-size: 1.15rem; margin: 18px 0 6px; color: var(--blue); }
+    .vault-doc h5 { font-family: var(--serif); font-size: 1rem; margin: 12px 0 4px; color: var(--green); }
+    .vault-doc p { margin: 8px 0; }
+    .vault-doc ul, .vault-doc ol { margin: 6px 0 10px 22px; padding: 0; }
+    .vault-doc li { margin-bottom: 4px; }
+    .vault-doc pre { background: #18251d; color: #f9f4e9; border-radius: 14px; padding: 16px 18px; font-family: 'SFMono-Regular', Consolas, monospace; font-size: .82rem; line-height: 1.55; overflow-x: auto; margin: 12px 0; }
+    .vault-doc code { background: rgba(31,41,51,.07); padding: 1px 6px; border-radius: 4px; font-size: .88em; }
+    .vault-doc blockquote { border-left: 4px solid var(--gold); margin: 12px 0; padding: 6px 14px; background: rgba(239,225,198,.32); border-radius: 0 12px 12px 0; color: #4b5563; }
+    .vault-doc .pill { display: inline-block; font-size: .72rem; padding: 2px 8px; border-radius: 999px; font-weight: 800; letter-spacing: .06em; margin-right: 6px; text-transform: uppercase; }
+    .vault-doc .pill.new { background: #dff0e4; color: #1f5130; }
+    .vault-doc .pill.resolved { background: #cde7f1; color: #154d63; }
+    .vault-doc .pill.open { background: #fff0cc; color: #7a5416; }
+    .vault-doc .pill.negative { background: #f2e4e4; color: #7b2d2d; }
+    .vault-doc a { word-break: break-word; }
+    .vault-banner { background: linear-gradient(145deg, #fff7e8, #efe1c6); border: 1px solid rgba(184,137,59,.4); border-radius: 22px; padding: 22px 26px; box-shadow: var(--shadow); }
+    .vault-banner h3 { font-family: var(--serif); font-size: 1.5rem; margin-bottom: 6px; color: var(--green); }
+    .vault-banner p { color: #4b5563; margin: 6px 0; }
     @media (max-width: 800px) {
       .hero-grid, .cards, .split, .map-grid { grid-template-columns: 1fr; }
       .hero-panel + .hero-panel { border-left: 0; border-top: 1px solid var(--line); }
@@ -358,6 +381,7 @@
       <a href="#confidence">Confidence</a>
       <a href="#family-help">Help improve it</a>
       <a href="#sources">Sources</a>
+      <a href="#vault">Research Vault</a>
       <a href="#next">Next</a>
     </div>
   </nav>
@@ -388,7 +412,7 @@
           </div>
           <div class="tree-label">Great-grandparent anchors</div>
           <div class="branch-grid">
-            <div class="branch-card" id="hunter-side"><h3>Hunter’s Carlile Side</h3><p>The polished paternal story: Ohio roots, Princeton, Walloon Lake, manufacturing, and Virginia Turpin/Andrews history.</p><div class="branch-list"><div class="branch-item"><b>William Arthur Carlile Jr. + Mary Carlile</b><br/>Robert’s family-confirmed parents.</div><div class="branch-item"><b>William Arthur Carlile + Ruth Huntington</b><br/>Columbus, Ohio; the Huntington surname explains the family middle-name thread.</div><div class="branch-item"><b>William Garnett Turpin + Lucille Foster Andrews</b><br/>Allene/Lena’s parents; Virginia line.</div></div><div class="source-pills"><a href="https://rivercountrynews.com/william-randolph-billy-turpin-p19968-333.htm" target="_blank" rel="noopener noreferrer">Billy Turpin</a><a href="https://www.legacy.com/us/obituaries/name/wayland-andrews-obituary?id=27376460" target="_blank" rel="noopener noreferrer">Andrews bridge</a></div></div>
+            <div class="branch-card" id="hunter-side"><h3>Hunter’s Carlile Side</h3><p>The polished paternal story: Ohio roots, Princeton, Walloon Lake, manufacturing, and Virginia Turpin/Andrews history.</p><div class="branch-list"><div class="branch-item"><b>William Arthur Carlile Jr. (1913–1993) + Mary Tarbell Carlile (m. 1939)</b><br/>Robert’s parents — confirmed via two independent Princeton Alumni Weekly memorials (Pass 7, 2026-05-24).</div><div class="branch-item"><b>William Arthur Carlile + Ruth Huntington</b><br/>Columbus, Ohio; the Huntington surname explains the family middle-name thread.</div><div class="branch-item"><b>William Garnett Turpin + Lucille Foster Andrews</b><br/>Allene/Lena’s parents; Virginia line.</div></div><div class="source-pills"><a href="https://paw.princeton.edu/memorial/robert-h-carlile-64" target="_blank" rel="noopener noreferrer">Robert PAW ’64</a><a href="https://paw.princeton.edu/memorial/william-arthur-carlile-36" target="_blank" rel="noopener noreferrer">William Jr. PAW ’36</a><a href="https://rivercountrynews.com/william-randolph-billy-turpin-p19968-333.htm" target="_blank" rel="noopener noreferrer">Billy Turpin</a><a href="https://www.legacy.com/us/obituaries/name/wayland-andrews-obituary?id=27376460" target="_blank" rel="noopener noreferrer">Andrews bridge</a></div></div>
             <div class="branch-card" id="tara-side"><h3>Tara’s Nelson Side</h3><p>The polished maternal story: northern Indiana, Nelson Beverage, Mentone, Claypool, Atwood, and confirmed Tucker/Miller records.</p><div class="branch-list"><div class="branch-item"><b>Denzel / Denzil Nelson + Lena Williamson</b><br/>Jerry Nelson’s parents; direct Denzel/Lena records still being pursued.</div><div class="branch-item"><b>Edison C. Tucker + Mary E. Miller Tucker Bucher</b><br/>Direct obituaries confirm the Grandma Jo line. Current source-backed spelling is Bucher, not Bueher.</div><div class="branch-item"><b>Cloyce Miller + Roxie Parker</b><br/>Mary’s parents, confirmed by her obituary.</div></div></div>
           </div>
         </div>
@@ -554,6 +578,8 @@
       <div class="wrap">
         <div class="section-title"><h2>Source Highlights</h2><p class="section-note">The full research vault has more detail. These are the sources that carried the story.</p></div>
         <ul class="sources">
+          <li><a href="https://paw.princeton.edu/memorial/robert-h-carlile-64" target="_blank" rel="noopener noreferrer">Princeton Alumni Weekly memorial for Robert H. Carlile ’64 <em>(Pass 7 — bridges Robert to William ’36)</em></a></li>
+          <li><a href="https://paw.princeton.edu/memorial/william-arthur-carlile-36" target="_blank" rel="noopener noreferrer">Princeton Alumni Weekly memorial for William Arthur Carlile ’36 <em>(Pass 7 — confirms Mary Tarbell)</em></a></li>
           <li><a href="https://www.stonefuneralhomeinc.com/obituary/Robert-Carlile" target="_blank" rel="noopener noreferrer">Stone Funeral Home obituary for Robert H. Carlile</a></li>
           <li><a href="https://paw.princeton.edu/memorial/william-h-carlile-73" target="_blank" rel="noopener noreferrer">Princeton Alumni Weekly memorial for William H. Carlile ’73</a></li>
           <li><a href="https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027" target="_blank" rel="noopener noreferrer">Legacy / Columbus Dispatch obituary for William Harlow Carlile</a></li>
@@ -568,12 +594,362 @@
       </div>
     </section>
 
+    <section id="vault">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Research Vault</h2>
+          <p class="section-note">Everything from the working markdown vault, dropped onto the page so nothing is hidden. Click any section to expand.</p>
+        </div>
+
+        <div class="vault-banner" style="margin-bottom:18px">
+          <div class="meta">Pass 7 headline — 2026-05-24</div>
+          <h3>Mary's maiden name is Tarbell, and the paternal Carlile bridge is fully closed.</h3>
+          <p>The Princeton Alumni Weekly memorial for <strong>William Arthur Carlile '36</strong> directly names <strong>Mary Tarbell</strong> as his wife (married 1939) and lists their four children — <strong>Robert H. '64</strong>, William H. '73, Cynthia C. Bashore, and Molly C. Gordon. <strong>Robert H. Carlile '64</strong>'s own PAW memorial independently names William '36 as his father and Foster and Hunter as his sons. Combined with the William H. '73 memorial and Legacy obituary, the paternal Carlile bridge is now a four-source cross-referenced confirmation.</p>
+          <p style="margin-top:10px"><a class="source-pill" href="https://paw.princeton.edu/memorial/william-arthur-carlile-36" target="_blank" rel="noopener noreferrer">William ’36 PAW</a> <a class="source-pill" href="https://paw.princeton.edu/memorial/robert-h-carlile-64" target="_blank" rel="noopener noreferrer">Robert ’64 PAW</a></p>
+        </div>
+
+        <div class="vault">
+
+          <details open>
+            <summary>Executive summary</summary>
+            <div class="vault-doc">
+              <p>The research now has a strong foundation on both sides of Tucker's family.</p>
+              <p>On the <strong>maternal side</strong>, the line from Tucker to <strong>Jerry Nelson</strong>, <strong>JoAnn / Jo Williams</strong>, <strong>Mary E. Miller Tucker Bucher</strong>, and <strong>Edison C. Tucker</strong> is strongly source-backed. Mary and Edison each have direct obituary evidence, and Jerry Nelson's obituary ties the Nelson line to Warsaw / Winona Lake / Kosciusko County, Indiana.</p>
+              <p>On the <strong>paternal side</strong>, the line through <strong>Allene "Lena" Turpin Carlile</strong> is well supported, and her Turpin/Andrews ancestry reaches Richmond / Essex County, Virginia. The Carlile/Huntington side had a major breakthrough: <strong>William Arthur Carlile + Ruth Huntington Carlile</strong> of Columbus, Ohio are strongly tied to the Robert Carlile cluster through Princeton and Columbus Academy sources. Tucker provided Robert's Stone Funeral Home obituary, and Tucker's dad confirmed Robert's parents. Pass 7 (2026-05-24) added the Robert H. Carlile '64 and William Arthur Carlile '36 PAW memorials, which directly name each other and resolve <strong>Mary's maiden name as Tarbell</strong>.</p>
+              <h4>Confidence legend</h4>
+              <ul>
+                <li><strong>Confirmed:</strong> Direct obituary, public record, or repeated close-family sources support the claim.</li>
+                <li><strong>High confidence:</strong> Multiple strong sources and/or family testimony align, but one ideal bridge record is still missing.</li>
+                <li><strong>Hypothesis:</strong> Plausible and useful for future search, but not yet safe to treat as fact.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Direct ancestor tree (full)</summary>
+            <div class="vault-doc">
+<pre>Tucker Andrews Carlile (Living, b. 2002)
+├── Father: Andrew/Andrews Huntington Carlile (Living; exact spelling still to verify)
+│   ├── Robert H. / Robert Huntington Carlile (paternal grandfather; b. Oct. 29, 1941; d. Mar. 16, 2024, Boyne City, MI)
+│   │   └── parents: William Arthur Carlile Jr. (1913–1993) + Mary Tarbell Carlile (m. 1939)
+│   │       └── William Arthur Carlile (1884–1960) + Ruth Huntington Carlile (1889–1975) of Columbus, OH
+│   │           ├── William S. Carlile + Abbie Theresa Jane Cott Carlile (probable Carlile parents)
+│   │           └── Webster Perit Huntington + Anna Harlow Huntington (Ruth's parents)
+│   └── Allene "Lena" Turpin Carlile (1943–2021)
+│       ├── William Garnett Turpin
+│       └── Lucille Foster Andrews Turpin (1913–1999 lead)
+│           └── William Lawrence Andrews + Allene Beazley Andrews (likely parents)
+└── Mother: Tara Christine Nelson (Living)
+    ├── Jerry Nelson (1938–2021)
+    │   ├── Denzel / Denzil Nelson (1907–1977 lead)
+    │   │   └── Masa G. Nelson + Mina Barkman Nelson (likely parents)
+    │   └── Lena Williamson Nelson (d. likely Jan.–Feb. 1939)
+    └── Jo / JoAnn Williams / Jo Nelson (Living)
+        ├── Edison C. Tucker (1911–1969)
+        │   └── Charles M. Tucker + Suzannah Eiler Tucker
+        └── Mary E. Miller Tucker Bucher (1916–2015)
+            └── Cloyce Miller + Roxie Parker Miller</pre>
+            </div>
+          </details>
+
+          <details>
+            <summary>Maternal line — Nelson / Tucker / Miller / Bucher</summary>
+            <div class="vault-doc">
+              <h4>Jerry Nelson — maternal grandfather <span class="pill new">Confirmed</span></h4>
+              <ul>
+                <li>Born: <strong>March 3, 1938</strong>, Warsaw, Indiana</li>
+                <li>Died: <strong>April 3, 2021</strong></li>
+                <li>Residence: Winona Lake / Kosciusko County, Indiana</li>
+                <li>Parents: <strong>Denzel Nelson</strong> and <strong>Lena Williamson Nelson</strong></li>
+                <li>Stepmother: <strong>Marian Conn Nelson</strong></li>
+                <li>Siblings include <strong>Michael F. Nelson</strong> and <strong>Larry Nelson</strong></li>
+                <li>Career: farmer (~30 years), owner/operator of <strong>Nelson Beverage</strong>; Indiana Golf Hall of Fame; seven-time Rozella Ford club champion</li>
+              </ul>
+
+              <h4>Denzel / Denzil Nelson — maternal great-grandfather <span class="pill open">Direct record pending</span></h4>
+              <ul>
+                <li>Name appears as both <strong>Denzel</strong> and <strong>Denzil</strong> in sources.</li>
+                <li>Best current lead: born <strong>Dec. 2, 1907</strong>, died <strong>March 1977</strong>, Burket / Kosciusko County area.</li>
+                <li>Parent hypothesis: <strong>Masa G. Nelson + Mina Barkman Nelson</strong> (Masa's 1971 obituary names a son Denzel of Burket; Franklin A. Nelson's 1971 obituary names same parents).</li>
+              </ul>
+
+              <h4>Lena Williamson Nelson — maternal great-grandmother <span class="pill open">Direct record pending</span></h4>
+              <p>Married to Denzel/Denzil Nelson. Likely died <strong>January–February 1939</strong> in the Burket / Warsaw / Kosciusko County area. Larry Nelson's March 1939 obituary says his mother had died "a few weeks" before Larry's fatal accident.</p>
+
+              <h4>Mary E. Miller Tucker Bucher — maternal great-grandmother <span class="pill new">Confirmed</span></h4>
+              <ul>
+                <li>Born: <strong>Oct. 28, 1916</strong>, Claypool, Indiana</li>
+                <li>Died: <strong>Mar. 23, 2015</strong>, Winona Lake, Indiana</li>
+                <li>Burial: <strong>Mentone Cemetery</strong></li>
+                <li>Parents: <strong>Cloyce Miller</strong> and <strong>Roxie Parker Miller</strong></li>
+                <li>First husband: <strong>Edison C. Tucker</strong>, married June 9, 1937, Claypool</li>
+                <li>Second husband: <strong>C. Edward Bucher</strong>, married Jan. 5, 1985, Beaver Dam</li>
+                <li>Obituary names daughter JoAnn Williams and granddaughter Tara Carlile.</li>
+              </ul>
+
+              <h4>Edison C. Tucker — maternal great-grandfather <span class="pill new">Confirmed</span></h4>
+              <ul>
+                <li>Born: <strong>Nov. 16, 1911</strong>, Mentone, Indiana</li>
+                <li>Died: <strong>Feb. 21, 1969</strong>, rural Mentone, Indiana</li>
+                <li>Burial: <strong>Mentone Cemetery</strong></li>
+                <li>Parents: <strong>Charles M. Tucker</strong> and <strong>Suzannah Eiler Tucker</strong></li>
+                <li>Married Mary Miller June 9, 1937, Claypool. Farmer; Masonic and Shrine organizations.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Paternal line — Carlile / Huntington / Turpin / Andrews</summary>
+            <div class="vault-doc">
+              <h4>Robert H. Carlile — paternal grandfather <span class="pill new">Confirmed</span></h4>
+              <p>Born Oct. 29, 1941; died Mar. 16, 2024, Boyne City, Michigan. Tucker provided the Stone Funeral Home obituary. <strong>Pass 7 (2026-05-24)</strong> surfaced his own Princeton Alumni Weekly memorial as Robert H. Carlile '64, which directly names father William '36 and brother William '73, plus sons Foster and Hunter.</p>
+              <ul>
+                <li><strong>Education:</strong> Columbus Academy (class president, co-captain of football, yearbook editor) → Princeton '64 (religion major; thesis on Martin Luther's doctrine of statehood) → University of Virginia MBA.</li>
+                <li><strong>Princeton activities:</strong> 150-pound crew, Campus Fund Drive chairman, Chapel deacon, Cap &amp; Gown sec/treasurer, Class agent 1964–1967.</li>
+                <li><strong>Career:</strong> Air Force officer → Huntington Bancshares (Ohio &amp; Kentucky, 17+ years executive) → Trustcorp Bank Ohio EVP → First National Bank of Elgin, IL president.</li>
+                <li><strong>Retirement:</strong> Michigan; flew his own plane; Princeton Alumni Schools Committee interviewer.</li>
+                <li><strong>Family:</strong> Father William Carlile '36; uncle John Carlile '38; brother William Carlile '73 (predeceased); sons Foster and Hunter.</li>
+                <li><strong>Classmate tribute:</strong> "Bob was a true inspiration in his career because of his grace!" — Faith Chapin.</li>
+              </ul>
+
+              <h4>William Arthur Carlile Jr. + Mary Tarbell Carlile <span class="pill new">Confirmed (Pass 7)</span></h4>
+              <ul>
+                <li><strong>William Jr.:</strong> Born Dec. 10, 1913, Columbus, Ohio; died <strong>March 1, 1993</strong>, Columbus, Ohio, after a long illness.</li>
+                <li><strong>Education:</strong> Columbus Academy → Hun School → Princeton Class of 1936 (economics).</li>
+                <li><strong>Princeton activities:</strong> VP of Quadrangle Club; numerals in football and 150-lb crew; chairman of The Daily Princetonian, Undergraduate Council, junior-senior Prom committee, and Honor Committee; Class president senior year and for five years post-graduation.</li>
+                <li><strong>Career:</strong> Columbus Bolt and Forging Company → Metal Forge Company (president → chairman, retired 1979).</li>
+                <li><strong>Civic:</strong> Chairman of Columbus Academy, Columbus School for Girls, and his Presbyterian church; president of a national trade organization and a 700-bed hospital; VP of Ohio Manufacturers Association; bank/insurance/utility board memberships.</li>
+                <li><strong>Mary Tarbell:</strong> Married William Jr. in <strong>1939</strong>. Maiden name confirmed via PAW memorial 2026-05-24. Parents, birthplace, and birth/death are the new highest-leverage paternal open questions.</li>
+                <li><strong>Children:</strong> Robert H. '64, William H. '73, Cynthia C. Bashore, Molly C. Gordon, and three grandchildren named in PAW.</li>
+                <li><strong>Class of 1936 said:</strong> "one of the greats," "a friendly and talented loyal Princetonian."</li>
+              </ul>
+
+              <h4>William Arthur Carlile + Ruth Huntington Carlile — paternal upstream anchors <span class="pill new">Strongly supported</span></h4>
+              <ul>
+                <li><strong>William Arthur Carlile:</strong> Nov. 20, 1884 – Feb. 24, 1960; Green Lawn Cemetery, Columbus.</li>
+                <li><strong>Ruth Huntington Carlile:</strong> Sept. 13, 1889 – Oct. 5, 1975; Green Lawn Cemetery.</li>
+                <li><strong>William's likely parents:</strong> William S. Carlile (1840–1918) + Abbie Theresa Jane Cott Carlile (1850–1910); W. S. Carlile &amp; Sons Co. furniture business lead in Columbus.</li>
+                <li><strong>Ruth's parents:</strong> Webster Perit Huntington + Anna Harlow Huntington. Her Huntington surname explains the repeated Huntington middle-name clue in Robert / Andrew(s) Huntington Carlile.</li>
+                <li><strong>Other children:</strong> John Webster Carlile (Princeton '38, Walloon Lake cottage); Richard Huntington Carlile (infant, 1919–1919).</li>
+              </ul>
+
+              <h4>Allene "Lena" Turpin Carlile — paternal grandmother <span class="pill new">Confirmed</span></h4>
+              <ul>
+                <li>Born <strong>June 27, 1943</strong>, Richmond, Virginia.</li>
+                <li>Died <strong>Dec. 6, 2021</strong>, Grosse Pointe Park, Michigan.</li>
+                <li>Parents: <strong>William G. / William Garnett Turpin</strong> + <strong>Lucille Foster Andrews Turpin</strong>.</li>
+                <li>Raised two sons with former husband Robert Carlile: Hunter and Foster.</li>
+                <li>Walloon Lake meaningful in her life/memorial context.</li>
+              </ul>
+
+              <h4>Turpin / Andrews older generations <span class="pill open">High confidence; direct records preferred</span></h4>
+              <ul>
+                <li><strong>William Garnett Turpin:</strong> Name expanded from "William G." through Billy Turpin's obituary; direct record still preferred.</li>
+                <li><strong>Lucille Foster Andrews Turpin:</strong> Birth/death lead 1913–1999, Essex County, Virginia / Paynefield Cemetery.</li>
+                <li><strong>Lucille's likely parents:</strong> William Lawrence Andrews + Allene Beazley Andrews, per Wayland D. Andrews's obituary naming Lucille as sibling and naming Turpin nieces/nephews including Allene Turpin Carlisle.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>23andMe ethnicity breakdown (2026-05-20)</summary>
+            <div class="vault-doc">
+              <ul>
+                <li><strong>England — 64%</strong>
+                  <ul>
+                    <li>Southeastern England &amp; Northwestern Europe — 41%</li>
+                    <li>North East England — 19%</li>
+                    <li>Devon &amp; Somerset — 4%</li>
+                  </ul>
+                </li>
+                <li><strong>Celtic &amp; Gaelic — 21%</strong>
+                  <ul>
+                    <li>Central Scotland &amp; Northern Ireland — 14%</li>
+                    <li>Leinster, Ireland — 3%</li>
+                    <li>Southern Wales — 3%</li>
+                    <li>Munster, Ireland — 1%</li>
+                  </ul>
+                </li>
+                <li><strong>Western Europe — 11%</strong>: Southern Germanic Europe</li>
+                <li><strong>Nordic — 3%</strong>: Denmark 2%, Iceland 1%</li>
+                <li><strong>Jewish — 1%</strong>: Ashkenazi Jews in Central &amp; Southeastern Europe</li>
+              </ul>
+              <p><em>Interpretation:</em> Useful as broad migration/context clues, not proof of specific ancestors. The strong British Isles signal fits the documentary direction so far — Carlile / Huntington / Andrews / Tucker / Nelson-style colonial and English/Scots-Irish lines — but exact ancestor origins still need records.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Geographic clusters</summary>
+            <div class="vault-doc">
+              <h4>Indiana maternal cluster</h4>
+              <ul>
+                <li><strong>Warsaw / Winona Lake / Kosciusko County</strong> — Jerry Nelson and Tara/Jerry family context.</li>
+                <li><strong>Burket / Beaver Dam</strong> — Nelson family and Jerry's school/community context.</li>
+                <li><strong>Mentone / Atwood / Claypool / Fulton County</strong> — Mary Miller Tucker Bucher, Edison Tucker, JoAnn Williams, Tucker/Bucher records.</li>
+              </ul>
+              <h4>Ohio / Michigan paternal Carlile–Huntington cluster</h4>
+              <ul>
+                <li><strong>Columbus, Ohio</strong> — William Arthur Carlile, Ruth Huntington Carlile, Columbus Academy, W. S. Carlile Sons Co., Columbus Bolt and Forging / Metal Forge Company.</li>
+                <li><strong>Princeton, New Jersey</strong> — William A. Jr., John Webster, Robert ('64), William Harlow ('73).</li>
+                <li><strong>Walloon Lake, Michigan</strong> — summer cottage / family association context.</li>
+                <li><strong>Grosse Pointe / Toledo / Michigan–Ohio corridor</strong> — later Allene/Lena and family context.</li>
+                <li><strong>Charlottesville, Virginia</strong> — Robert's UVA MBA.</li>
+                <li><strong>Elgin, Illinois</strong> — Robert's First National Bank presidency.</li>
+              </ul>
+              <h4>Virginia Turpin–Andrews cluster</h4>
+              <ul>
+                <li><strong>Richmond, Virginia</strong> — Allene/Lena birth.</li>
+                <li><strong>Essex County, Virginia</strong> — Lucille Foster Andrews / Andrews-Beazley leads.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Open questions (16) — what we're still chasing</summary>
+            <div class="vault-doc">
+              <h4>Pass 7 resolved (2026-05-24)</h4>
+              <ul>
+                <li><span class="pill resolved">Resolved</span> Mary's maiden name — <strong>Tarbell</strong>, married William A. Jr. in 1939 per PAW memorial.</li>
+                <li><span class="pill resolved">Resolved</span> Direct public record naming Robert H. Carlile's parents — Robert '64 PAW memorial directly names father William '36 and brother William '73.</li>
+                <li><span class="pill resolved">Resolved</span> William A. Carlile Jr. PAW memorial captured (Columbus Dispatch obituary still ideal but no longer blocking).</li>
+              </ul>
+              <h4>High priority remaining</h4>
+              <ol>
+                <li>Verify Tucker's father's exact legal spelling: Andrew Huntington Carlile vs Andrews Huntington Carlile.</li>
+                <li>Maternal geography cluster: continue using Mentone, Atwood, Warsaw, Winona Lake, Richmond, Beaver Dam, Burket, Claypool, Kosciusko County, Fulton County in public-record searches.</li>
+                <li>Find original newspaper image / cemetery memorial for Mary E. Tucker Bucher as archival backup. Her 2015 obituary transcription already confirms birth/death dates, parents, spouses, daughter JoAnn Williams, and burial at Mentone Cemetery.</li>
+                <li>Expand Edison C. Tucker backward: seek Charles M. Tucker + Suzannah Eiler marriage, census, cemetery, and obituary records.</li>
+                <li>Find Denzel/Denzil Nelson's own obituary/death/burial record and Lena Williamson Nelson's own obituary/death/burial record. Pass 3 + Pass 7 found no direct record; search both Denzel and Denzil.</li>
+                <li>Verify the likely Masa G. Nelson + Mina Barkman Nelson → Denzel/Denzil link with Denzel's own obituary, a census household, or a marriage/death record.</li>
+                <li><span class="pill resolved">Mostly resolved</span> Robert H. Carlile's grandfather identity confirmed via Tucker's provided obituary plus PAW memorial.</li>
+                <li>Optional archival backup: marriage/divorce/probate/newspaper social records tying Robert H. Carlile to Allene Turpin Carlile and sons Hunter and Foster (Robert PAW memorial independently names both sons).</li>
+                <li><span class="pill resolved">Resolved (Pass 7)</span> Robert H. Carlile's descent from William Arthur Carlile + Ruth Huntington Carlile of Columbus, Ohio.</li>
+                <li>Identify the third son of William Arthur + Ruth Huntington Carlile named indirectly in John Webster Carlile's obituary. (William Jr., John Webster, and Richard Huntington (infant) are known; this question may now be moot.)</li>
+                <li>Search Columbus Dispatch, Princeton Alumni Weekly class notes, Columbus Academy archives, Franklin County probate/deeds, and Walloon/Petoskey/Charlevoix/Emmet County property or society pages for the broader Carlile, Huntington, and Walloon cottage references.</li>
+                <li>Find William Garnett Turpin's direct obituary/marriage/cemetery record and Lucille Foster Andrews Turpin's own obituary/grave image.</li>
+                <li>Direct public search permission was granted for JoAnn / Grandma Jo 2026-05-20; still keep sensitive living-person details minimal/private.</li>
+                <li>Find direct records for Cloyce Miller and Roxie Parker Miller. Pass 7 searched but found nothing direct.</li>
+                <li>Find direct record for Lena Williamson Nelson; likely death window Jan.–Feb. 1939 based on Larry Nelson's March 1939 obituary.</li>
+                <li>Verify William Lawrence Andrews + Allene Beazley Andrews with direct records.</li>
+              </ol>
+              <h4>New from Pass 7</h4>
+              <ul>
+                <li>Mary Tarbell's parents, birthplace, birth/death dates.</li>
+                <li>1939 Franklin County, Ohio marriage record for William A. Carlile Jr. + Mary Tarbell.</li>
+                <li>Mary Tarbell Carlile obituary (likely Columbus Dispatch).</li>
+                <li>Robert H. Carlile UVA MBA year + Air Force service period.</li>
+                <li>Stackus Funeral Home vs Stone Funeral Home for Robert's original obituary text.</li>
+                <li>Robert's daughters Cynthia C. Bashore and Molly C. Gordon — context only, minimize publication.</li>
+              </ul>
+              <h4>Data to request from family</h4>
+              <ul>
+                <li>23andMe DNA matches/export screenshots if Tucker wants to use them for branch confirmation later.</li>
+                <li>Any FamilySearch tree export, screenshots, or GEDCOM.</li>
+                <li>Photos/scans of birth, marriage, death, military, cemetery, church, immigration, or newspaper records.</li>
+                <li>Known cemeteries, churches, hometowns, counties, or states from family memory.</li>
+                <li>Grandma may have old documents/photos later; ask when convenient.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Research run history (Passes 1–7)</summary>
+            <div class="vault-doc">
+              <h4>Pass 1 — First safe public search (2026-05-20)</h4>
+              <p>First pass after Tucker confirmed deceased-status for grandparents/great-grandparents. Found Allene "Lena" Turpin Carlile via Grosse Pointe News PDF and Legacy/The Blade obituary; opened the Turpin/Andrews Virginia line.</p>
+
+              <h4>Pass 2 — Jerry Nelson + Mary Bucher safe pass (2026-05-20)</h4>
+              <p>Strong match for Jerry Nelson born March 3, 1938 in Warsaw via Titus + InkFreeNews obituaries. Plausible Mary Tucker/Bucher lead in the Mentone/Atwood/Claypool/Fulton-Kosciusko cluster.</p>
+
+              <h4>Pass 3 — Maternal deep pass (2026-05-20)</h4>
+              <p>Confirmed Mary E. Miller Tucker Bucher (1916–2015) with parents Cloyce Miller + Roxie Parker Miller, husbands Edison C. Tucker (m. 1937) and C. Edward Bucher (m. 1985), and daughter JoAnn Williams. Strengthened Masa G. Nelson + Mina Barkman Nelson → Denzel/Denzil Nelson hypothesis via Masa and Franklin A. Nelson 1971 obituaries. Larry Nelson 1939 obituary placed Lena Williamson Nelson's death in Jan.–Feb. 1939.</p>
+
+              <h4>Pass 4 — Paternal Carlile/Huntington broad pass (2026-05-20)</h4>
+              <p>Found the Columbus / Princeton / Walloon / manufacturing / Huntington cluster: William Arthur Carlile (1884–1960) + Ruth Huntington Carlile (1889–1975); their sons William A. Jr. (Princeton '36, Columbus Bolt Works) and John Webster (Princeton '38, Walloon cottage); upstream W. S. Carlile &amp; Sons Co. furniture business in Columbus.</p>
+
+              <h4>Pass 5 — Robert Carlile hard records (2026-05-20)</h4>
+              <p>Targeted Princeton/Walloon/Columbus Bolt Works/W. S. Carlile Sons + railroad/train queries. Confirmed the broader cluster but did not yet bridge Robert to William Jr. + Mary directly.</p>
+
+              <h4>Pass 6 — Carlile/Huntington deep pass (2026-05-20)</h4>
+              <p>Major bridge found via William Harlow Carlile's PAW memorial: "Bill followed his father William A. '36, uncle John '38, and brother Robert '64 to Princeton." Legacy/Columbus Dispatch obituary said William Harlow was youngest child of Mary and William A. Carlile Jr., survived by sister Molly and brother Robert. Cemetery transcriptions extended the Carlile line to probable William S. Carlile + Abbie Theresa Jane Cott Carlile, and the Huntington line to Webster Perit Huntington + Anna Harlow Huntington (Ruth's parents).</p>
+
+              <h4>Bucher spelling + map upgrade (2026-05-21)</h4>
+              <p>Confirmed source-backed spelling is <strong>Bucher</strong>, not Bueher. Deployed OpenStreetMap + Leaflet map to the site with approximate public town/county markers only.</p>
+
+              <h4>Pass 7 — Mary Tarbell bridge (2026-05-24) <span class="pill new">Latest</span></h4>
+              <p>Found <strong>William Arthur Carlile '36</strong> PAW memorial: died Mar. 1, 1993, Columbus, OH; married <strong>Mary Tarbell</strong> 1939; children Robert H. '64, William H. '73, Cynthia C. Bashore, Molly C. Gordon. Found <strong>Robert H. Carlile '64</strong> PAW memorial: father William '36, uncle John '38, brother William '73 (predeceased), sons Foster and Hunter. Robert's career: Air Force → Huntington Bancshares (17+ years) → Trustcorp Bank Ohio EVP → First National Bank of Elgin, IL president; UVA MBA. Cloyce Miller + Roxie Parker, Denzel Nelson direct records, and Columbus Ohio Tarbell family — searched, no direct hits this pass.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Complete source list</summary>
+            <div class="vault-doc">
+              <h4>Pass 7 sources (2026-05-24)</h4>
+              <ul>
+                <li><a href="https://paw.princeton.edu/memorial/william-arthur-carlile-36" target="_blank" rel="noopener noreferrer">William Arthur Carlile '36 PAW memorial</a> — names Mary Tarbell + four children.</li>
+                <li><a href="https://paw.princeton.edu/memorial/robert-h-carlile-64" target="_blank" rel="noopener noreferrer">Robert H. Carlile '64 PAW memorial</a> — names father William '36 and sons Foster + Hunter.</li>
+              </ul>
+              <h4>Maternal sources</h4>
+              <ul>
+                <li><a href="https://www.titusfuneralhome.com/obituaries/jerry-nelson" target="_blank" rel="noopener noreferrer">Titus Funeral Home — Jerry Nelson</a></li>
+                <li><a href="https://www.inkfreenews.com/2021/04/05/jerry-nelson/" target="_blank" rel="noopener noreferrer">InkFreeNews — Jerry Nelson</a></li>
+                <li><a href="https://www.inkfreenews.com/2026/04/26/michael-f-nelson/" target="_blank" rel="noopener noreferrer">InkFreeNews — Michael F. Nelson (2026)</a></li>
+                <li><a href="https://genealogy.fulco.lib.in.us/Tombaugh/Obituaries/Obituaries_1971.htm" target="_blank" rel="noopener noreferrer">Fulton County — Masa/Franklin Nelson leads (1971)</a></li>
+                <li><a href="https://genealogy.fulco.lib.in.us/wp-content/uploads/2018/10/Obituaries_1939.PDF" target="_blank" rel="noopener noreferrer">Fulton County — Larry Nelson PDF (1939)</a></li>
+                <li><a href="http://genealogy.fulco.lib.in.us/Tombaugh/Obituaries/Obituaries_1969.htm" target="_blank" rel="noopener noreferrer">Fulton County — Edison C. Tucker (1969)</a></li>
+                <li><a href="https://www.hartzlerfuneralservices.com/m/obituaries/Mary-Tucker-Bucher/" target="_blank" rel="noopener noreferrer">Hartzler — Mary E. Tucker Bucher</a></li>
+                <li><a href="http://genealogy.fulco.lib.in.us/Tombaugh/Obituaries/Obituaries_2015.htm" target="_blank" rel="noopener noreferrer">Fulton County — 2015 index (Mary)</a></li>
+                <li><a href="https://genealogy.fulco.lib.in.us/wp-content/uploads/2018/10/Obituaries_1989.pdf" target="_blank" rel="noopener noreferrer">Fulton County — Chancey Lee Tucker PDF (1989)</a></li>
+                <li><a href="https://archive.inkfreenews.com/2019/07/19/rozella-ford-looms-magnificent-despite-humble-beginnings/" target="_blank" rel="noopener noreferrer">Rozella Ford history</a></li>
+                <li><a href="https://indianagolf.org/hall-of-fame-members/" target="_blank" rel="noopener noreferrer">Indiana Golf Hall of Fame</a></li>
+              </ul>
+              <h4>Paternal Carlile / Huntington sources</h4>
+              <ul>
+                <li><a href="https://www.stonefuneralhomeinc.com/obituary/Robert-Carlile" target="_blank" rel="noopener noreferrer">Stone Funeral Home — Robert H. Carlile</a></li>
+                <li><a href="https://www.e-yearbook.com/yearbooks/Columbus_Academy_Caravel_Yearbook/1955/Page_99.html" target="_blank" rel="noopener noreferrer">Columbus Academy 1955 yearbook — Robert Huntington Carlile</a></li>
+                <li><a href="https://paw.princeton.edu/memorial/william-h-carlile-73" target="_blank" rel="noopener noreferrer">PAW — William H. Carlile '73</a></li>
+                <li><a href="https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027" target="_blank" rel="noopener noreferrer">Legacy / Columbus Dispatch — William Harlow Carlile</a></li>
+                <li><a href="https://www.e-yearbook.com/yearbooks/Princeton_University_Nassau_Herald_Yearbook/1936/Page_1.html" target="_blank" rel="noopener noreferrer">Princeton Nassau Herald 1936 — William A. Carlile Jr.</a></li>
+                <li><a href="https://paw.princeton.edu/memorial/john-webster-carlile-38" target="_blank" rel="noopener noreferrer">PAW — John Webster Carlile '38</a></li>
+                <li><a href="https://www.hallwynne.com/obituaries/johneebster-carlile" target="_blank" rel="noopener noreferrer">Hall-Wynne — John Webster Carlile</a></li>
+                <li><a href="https://www.genealogybug.net/Franklin_Cemeteries/greenlawn/h/grnlwn_h.htm" target="_blank" rel="noopener noreferrer">Green Lawn Cemetery — Carlile/Huntington transcriptions</a></li>
+                <li><a href="https://www.cga.ct.gov/hco/books/The_Huntington_Family_in_America.pdf" target="_blank" rel="noopener noreferrer">Huntington Family in America (genealogy PDF)</a></li>
+              </ul>
+              <h4>Turpin / Andrews sources</h4>
+              <ul>
+                <li><a href="https://digitize.gp.lib.mi.us/history/newspapers/grossePointeNews/year_ranges/2020s/2021/pdf/2021-12-16.pdf" target="_blank" rel="noopener noreferrer">Grosse Pointe News PDF (2021-12-16) — Allene Turpin Carlile</a></li>
+                <li><a href="https://www.legacy.com/us/obituaries/toledoblade/name/allene-carlile-obituary?id=31834443" target="_blank" rel="noopener noreferrer">Legacy / The Blade — Allene Carlile</a></li>
+                <li><a href="https://rivercountrynews.com/william-randolph-billy-turpin-p19968-333.htm" target="_blank" rel="noopener noreferrer">River Country News — Billy Turpin</a></li>
+                <li><a href="https://storkefuneralhome.com/storke-funeral-home-obituaries/?id=1767" target="_blank" rel="noopener noreferrer">Storke Funeral Home — Billy Turpin</a></li>
+                <li><a href="https://www.legacy.com/us/obituaries/name/wayland-andrews-obituary?id=27376460" target="_blank" rel="noopener noreferrer">Legacy — Wayland D. Andrews (Andrews/Turpin bridge)</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Auto-research workflow + how this updates over time</summary>
+            <div class="vault-doc">
+              <p>This site now has a continuous auto-research workflow:</p>
+              <ul>
+                <li><strong>Weekly cron pass</strong> runs every Sunday around 9pm ET. It reads the Open Questions list, picks the highest-leverage unresolved question, runs targeted web searches and fetches, and writes a new <code>research-runs/&lt;date&gt;_autoresearch-pass-N.md</code> file in the vault.</li>
+                <li><strong>Pass updates</strong> propagate into the vault docs (<code>Tucker_Carlile_Family_History.md</code>, <code>Open_Questions.md</code>, <code>Research_Log.md</code>, <code>Family_Tree.md</code>) and the corresponding profile cards + Research Vault section on this page.</li>
+                <li><strong>Telegram diff</strong> goes to Tucker after each pass with the headline finding, what changed, and what's queued for next time.</li>
+                <li><strong>Family contributions</strong> via the email forms above feed the same vault; Tucker reviews and the bot integrates safe additions.</li>
+              </ul>
+              <p>If you (a family reader) spot something wrong or have a memory, document, or photo to add, please use the "Help improve it" section above — even a one-line correction is valuable.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
     <section id="next">
       <div class="wrap">
         <div class="hero-card"><div class="hero-panel">
           <span class="tag high">Recommended next step</span>
           <h2 style="font-size:clamp(1.8rem,3vw,2.7rem)">Share this privately, then let family add memories.</h2>
-          <p>This page is strong enough to send around as a private family-history draft. The best improvements now will come from family corrections, old documents, Grandma’s memories, photos, funeral cards, and any missing names — especially Mary Carlile’s maiden name and older Nelson/Williamson details.</p>
+          <p>Pass 7 closed the paternal bridge: Mary's maiden name is Tarbell, and Robert's Princeton Alumni Weekly memorial directly names William '36 as his father. The site now also carries the full research vault so nothing is hidden in a markdown file. The best improvements from here will come from family corrections, old documents, Grandma's memories, photos, funeral cards, and missing direct records for the Nelson/Williamson/Miller/Parker and Turpin/Andrews older generations.</p>
         </div></div>
       </div>
     </section>
@@ -581,7 +957,7 @@
 
   <footer>
     <div class="wrap">
-      <p><strong>Prepared for Tucker Carlile.</strong> Working private draft, generated from family testimony and public-source research. Last updated 2026-05-21.</p>
+      <p><strong>Prepared for Tucker Carlile.</strong> Working private draft, generated from family testimony and public-source research. Last updated 2026-05-24 (Pass 7).</p>
     </div>
   </footer>
 
@@ -628,9 +1004,9 @@
       "denzel-lena-nelson": { name: "Denzel / Denzil Nelson + Lena Williamson Nelson", side: "Tara’s side", confidence: "Confirmed parents; earlier line still being researched", confidenceClass: "high", lifespan: "Denzel lead: 1907–1977; Lena likely d. early 1939", relationship: "Tucker’s maternal great-grandparents through Jerry Nelson", summary: "Denzel/Denzil and Lena are confirmed as Jerry Nelson’s parents through Jerry and Michael Nelson records. The next-generation link to Masa G. Nelson + Mina Barkman Nelson is strong, but still needs a direct Denzel record.", facts: [["Denzel/Denzil", "Likely born Dec. 2, 1907; died Mar. 1977 lead"], ["Lena", "Likely died Jan.–Feb. 1939"], ["Children", "Jerry, Michael F., and Larry Nelson"]], places: ["Burket", "Warsaw", "Kosciusko County", "Fulton County records"], why: ["Pushes the Nelson line back before Jerry.", "Explains the Burket / Beaver Dam small-town cluster.", "Keeps an important research gap visible without overstating it."], family: ["Parents of Jerry Nelson", "Likely connected to Masa G. Nelson + Mina Barkman Nelson"], sources: [["Masa / Franklin leads", "https://genealogy.fulco.lib.in.us/Tombaugh/Obituaries/Obituaries_1971.htm"], ["Larry Nelson 1939 PDF", "https://genealogy.fulco.lib.in.us/wp-content/uploads/2018/10/Obituaries_1939.PDF"]], open: ["Find Denzel/Denzil’s 1977 obituary or death record.", "Find Lena Williamson Nelson’s 1939 obituary/death/burial record."] },
       "mary-miller-tucker-bucher": { name: "Mary E. Miller Tucker Bucher", side: "Tara’s side", confidence: "Confirmed", confidenceClass: "confirmed", lifespan: "Oct. 28, 1916 – Mar. 23, 2015", relationship: "Tucker’s maternal great-grandmother through Grandma Jo", summary: "Mary is one of the strongest maternal records. Her obituary names her parents, spouses, children, and grandchildren, directly connecting Mary to JoAnn Williams and Tara Carlile.", facts: [["Born", "Oct. 28, 1916, Claypool, Indiana"], ["Died", "Mar. 23, 2015, Winona Lake, Indiana"], ["Burial", "Mentone Cemetery"], ["Parents", "Cloyce Miller + Roxie Parker Miller"]], places: ["Claypool", "Winona Lake", "Mentone Cemetery", "Beaver Dam"], why: ["Directly verifies the Mary → JoAnn → Tara line.", "Resolves earlier name confusion around Miller / Tucker / Bucher.", "Opens the Miller / Parker branch."], family: ["First wife of Edison C. Tucker", "Mother of JoAnn Williams and Charles M. Tucker", "Daughter of Cloyce Miller and Roxie Parker Miller"], sources: [["Mary obituary", "https://www.hartzlerfuneralservices.com/m/obituaries/Mary-Tucker-Bucher/"], ["Fulton County 2015 index", "http://genealogy.fulco.lib.in.us/Tombaugh/Obituaries/Obituaries_2015.htm"]], open: ["Research Cloyce Miller + Roxie Parker Miller.", "Add family memories/photos for Mary beyond the obituary facts."] },
       "edison-c-tucker": { name: "Edison C. Tucker", side: "Tara’s side", confidence: "Confirmed", confidenceClass: "confirmed", lifespan: "Nov. 16, 1911 – Feb. 21, 1969", relationship: "Tucker’s maternal great-grandfather through Grandma Jo", summary: "Edison anchors the Tucker / Eiler branch in Mentone and rural northern Indiana. His obituary confirms his parents as Charles M. Tucker and Suzannah Eiler Tucker.", facts: [["Born", "Nov. 16, 1911, Mentone, Indiana"], ["Died", "Feb. 21, 1969, rural Mentone, Indiana"], ["Burial", "Mentone Cemetery"], ["Parents", "Charles M. Tucker + Suzannah Eiler Tucker"]], places: ["Mentone", "Rural Mentone", "Claypool", "Mentone Cemetery"], why: ["Confirms the Tucker side of Grandma Jo’s ancestry.", "Opens the Charles M. Tucker + Suzannah Eiler branch."], family: ["Husband of Mary E. Miller Tucker Bucher", "Father of JoAnn Williams and Charles M. Tucker"], sources: [["Edison obituary", "http://genealogy.fulco.lib.in.us/Tombaugh/Obituaries/Obituaries_1969.htm"], ["Tucker collateral PDF", "https://genealogy.fulco.lib.in.us/wp-content/uploads/2018/10/Obituaries_1989.pdf"]], open: ["Find cemetery photos/vital records for Edison and Mary.", "Research Charles M. Tucker + Suzannah Eiler Tucker."] },
-      "robert-carlile": { name: "Robert H. Carlile", also: ["Robert Huntington Carlile"], side: "Hunter’s side", confidence: "Confirmed", confidenceClass: "confirmed", lifespan: "Oct. 29, 1941 – Mar. 16, 2024", relationship: "Tucker’s paternal grandfather", summary: "Robert anchors Tucker’s paternal Carlile line. Tucker provided and confirmed the Stone Funeral Home obituary for Robert H. Carlile of Boyne City, Michigan. Public school and Princeton-family records connect the Robert H. / Robert Huntington Carlile cluster to Columbus Academy, Princeton, Columbus, Ohio, and the William Arthur Carlile Jr. family.", facts: [["Born", "Oct. 29, 1941"], ["Died", "Mar. 16, 2024, Boyne City, Michigan"], ["Key geography", "Boyne City / Walloon Lake / Columbus / Princeton cluster"]], places: ["Boyne City", "Walloon Lake", "Columbus", "Princeton"], why: ["Confirms the current-generation paternal Carlile anchor.", "Explains the Huntington clue through the Carlile/Huntington family surname.", "Bridges family memory with public records from Columbus Academy, Princeton, and later Michigan sources."], family: ["Former husband of Allene “Lena” Turpin Carlile", "Family-confirmed son of William Arthur Carlile Jr. + Mary Carlile", "Connected to William Harlow Carlile and Molly Carlile"], sources: [["Robert obituary", "https://www.stonefuneralhomeinc.com/obituary/Robert-Carlile"], ["Columbus Academy", "https://www.e-yearbook.com/yearbooks/Columbus_Academy_Caravel_Yearbook/1955/Page_99.html"], ["William Harlow memorial", "https://paw.princeton.edu/memorial/william-h-carlile-73"], ["William Harlow obituary", "https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027"]], open: ["Find a direct public record naming Robert’s parents.", "Confirm full legal middle name from an original/public record."] },
+      "robert-carlile": { name: "Robert H. Carlile", also: ["Robert Huntington Carlile", "Class of 1964, Princeton"], side: "Hunter’s side", confidence: "Confirmed (Pass 7, 2026-05-24)", confidenceClass: "confirmed", lifespan: "Oct. 29, 1941 – Mar. 16, 2024", relationship: "Tucker’s paternal grandfather", summary: "Robert anchors Tucker’s paternal Carlile line. Tucker provided the Stone Funeral Home obituary; Pass 7 surfaced the Princeton Alumni Weekly memorial for Robert H. Carlile ’64, which directly names his father (William Carlile ’36) and his sons (Foster and Hunter). Robert’s career arc — Air Force officer, Huntington Bancshares (17+ years executive), Trustcorp Bank Ohio EVP, First National Bank of Elgin president — anchors the family in Ohio/Kentucky/Illinois banking and explains the Huntington name reappearing in this generation.", facts: [["Born", "Oct. 29, 1941"], ["Died", "Mar. 16, 2024, Boyne City, Michigan (Boulder Park Terrace)"], ["Education", "Columbus Academy (class president, co-captain football, yearbook editor) → Princeton ’64 (religion; thesis on Martin Luther’s doctrine of statehood) → University of Virginia MBA"], ["Princeton activities", "150-pound crew · Campus Fund Drive chairman · Chapel deacon · Cap & Gown sec/treasurer · Class agent 1964–67"], ["Career", "Air Force officer → Huntington Bancshares (Ohio & Kentucky, 17+ years exec) → Trustcorp Bank Ohio EVP → First National Bank of Elgin, IL president"], ["Retirement", "Michigan; flew his own plane; Princeton Alumni Schools Committee interviewer"]], places: ["Boyne City", "Walloon Lake", "Columbus", "Princeton", "Charlottesville", "Elgin"], why: ["Confirms the current-generation paternal Carlile anchor.", "Robert PAW memorial closes the last paternal-bridge gap by directly naming William ’36 as father.", "The 17-year Huntington Bancshares chapter is an independent thread reinforcing the Huntington-name continuity (Ruth Huntington maiden name + Robert Huntington middle name + Huntington Bancshares career)."], family: ["Former husband of Allene “Lena” Turpin Carlile", "Confirmed son of William Arthur Carlile Jr. + Mary Tarbell Carlile (PAW double-source)", "Brother of William Harlow Carlile ’73, Cynthia C. Bashore, and Molly C. Gordon", "Father of Hunter and Foster"], sources: [["Robert PAW memorial (’64)", "https://paw.princeton.edu/memorial/robert-h-carlile-64"], ["Robert Stone Funeral Home", "https://www.stonefuneralhomeinc.com/obituary/Robert-Carlile"], ["Columbus Academy 1955", "https://www.e-yearbook.com/yearbooks/Columbus_Academy_Caravel_Yearbook/1955/Page_99.html"], ["William Jr. PAW memorial (’36)", "https://paw.princeton.edu/memorial/william-arthur-carlile-36"], ["William Harlow memorial (’73)", "https://paw.princeton.edu/memorial/william-h-carlile-73"], ["William Harlow obituary", "https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027"]], open: ["Find Robert’s full Stackus Funeral Home obituary text (Stone Funeral Home page has minimal body).", "Confirm UVA MBA year and Air Force service window from a primary source.", "Confirm full legal middle name (Robert Huntington vs Robert H.) from an original record."] },
       "allene-turpin-carlile": { name: "Allene “Lena” Turpin Carlile", also: ["Lena Turpin Carlile", "Allene Carlile"], side: "Hunter’s side", confidence: "Confirmed", confidenceClass: "confirmed", lifespan: "June 27, 1943 – Dec. 6, 2021", relationship: "Tucker’s paternal grandmother", summary: "Allene, remembered as Lena, anchors Tucker’s Turpin and Andrews branch. Public obituaries place her birth in Richmond, Virginia, later life in Grosse Pointe Park, Michigan, and family connection to Robert Carlile and their sons.", facts: [["Born", "June 27, 1943, Richmond, Virginia"], ["Died", "Dec. 6, 2021, Grosse Pointe Park, Michigan"], ["Parents", "William G. / William Garnett Turpin + Lucille Andrews Turpin"]], places: ["Richmond", "Grosse Pointe Park", "Walloon Lake", "Essex County"], why: ["Confirms the paternal grandmother line and opens the Turpin / Andrews / Beazley branch.", "Connects the family story to Richmond and Essex County, Virginia."], family: ["Former wife of Robert H. Carlile", "Daughter of William Garnett Turpin and Lucille Foster Andrews Turpin", "Sibling/context connection to William Randolph “Billy” Turpin"], sources: [["Allene obituary", "https://www.legacy.com/us/obituaries/toledoblade/name/allene-carlile-obituary?id=31834443"], ["Grosse Pointe News", "https://digitize.gp.lib.mi.us/history/newspapers/grossePointeNews/year_ranges/2020s/2021/pdf/2021-12-16.pdf"], ["Billy Turpin obituary", "https://rivercountrynews.com/william-randolph-billy-turpin-p19968-333.htm"], ["Wayland Andrews obituary", "https://www.legacy.com/us/obituaries/name/wayland-andrews-obituary?id=27376460"]], open: ["Find direct records for William Garnett Turpin and Lucille Foster Andrews Turpin.", "Add family-memory notes if available."] },
-      "william-arthur-carlile-jr": { name: "William Arthur Carlile Jr. + Mary Carlile", side: "Hunter’s side", confidence: "Family-confirmed / source-supported", confidenceClass: "confirmed", lifespan: "William Jr.: born Dec. 10, 1913 lead; Mary: maiden name still unknown", relationship: "Tucker’s paternal great-grandparent anchor for Robert’s line", summary: "William Arthur Carlile Jr. and Mary Carlile are the family-confirmed parents of Robert H. Carlile. The strongest public bridge comes through William Harlow Carlile’s Princeton memorial and obituary, which name Mary and William A. Carlile Jr. and identify siblings Robert and Molly.", facts: [["William Jr.", "Columbus Academy / Hun School / Princeton Class of 1936"], ["Business clue", "Expected to work in steel/iron manufacturing with Columbus Bolt Works"], ["Children/source cluster", "Robert, William Harlow, and Molly Carlile"]], places: ["Columbus", "Columbus Academy", "Princeton", "Hun School"], why: ["Bridges Robert to the older Carlile/Huntington family.", "Explains the Princeton and Columbus Academy cluster.", "Keeps Mary’s maiden name as the important open gap."], family: ["William Jr. is son of William Arthur Carlile + Ruth Huntington Carlile", "Parents of Robert H. Carlile by family confirmation and public sibling bridge"], sources: [["William Harlow memorial", "https://paw.princeton.edu/memorial/william-h-carlile-73"], ["William Harlow obituary", "https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027"], ["Princeton Nassau Herald", "https://www.e-yearbook.com/yearbooks/Princeton_University_Nassau_Herald_Yearbook/1936/Page_1.html"]], open: ["Find Mary’s maiden name and obituary.", "Find a direct public record naming Robert H. Carlile’s parents."] },
+      "william-arthur-carlile-jr": { name: "William Arthur Carlile Jr. + Mary Tarbell Carlile", side: "Hunter’s side", confidence: "Confirmed (Pass 7, 2026-05-24)", confidenceClass: "confirmed", lifespan: "William Jr.: Dec. 10, 1913 – March 1, 1993; Mary: Tarbell maiden name, m. 1939", relationship: "Tucker’s paternal great-grandparent anchor for Robert’s line", summary: "William Arthur Carlile Jr. and Mary Tarbell Carlile are the confirmed parents of Robert H. Carlile. The Princeton Alumni Weekly memorial for William Arthur Carlile ’36 directly names Mary Tarbell (m. 1939) and their four children: Robert H. ’64, William H. ’73, Cynthia C. Bashore, and Molly C. Gordon. Robert H. Carlile ’64’s own PAW memorial independently confirms William ’36 as his father.", facts: [["William Jr.", "Columbus Academy / Hun School / Princeton Class of 1936 (economics)"], ["Career", "Columbus Bolt and Forging Co. → Metal Forge Co. (president → chairman, retired 1979)"], ["Civic", "Chairman of Columbus Academy, Columbus School for Girls, and Presbyterian church"], ["Other roles", "VP of Ohio Manufacturers Association; president of a national trade org and a 700-bed hospital; bank/insurance/utility boards"], ["Married", "Mary Tarbell, 1939"], ["Children", "Robert H. ’64, William H. ’73, Cynthia C. Bashore, Molly C. Gordon"], ["Died", "March 1, 1993, Columbus, Ohio, after a long illness"]], places: ["Columbus", "Columbus Academy", "Princeton", "Hun School"], why: ["Bridges Robert directly to the older Carlile/Huntington family with two independent PAW memorials.", "Explains the Princeton and Columbus Academy cluster.", "Resolves the long-standing Mary maiden-name gap as Tarbell."], family: ["William Jr. is son of William Arthur Carlile + Ruth Huntington Carlile", "Confirmed parents of Robert H. Carlile and William Harlow Carlile (Tucker’s grandfather and great-uncle)"], sources: [["William Jr. PAW memorial (’36)", "https://paw.princeton.edu/memorial/william-arthur-carlile-36"], ["Robert PAW memorial (’64)", "https://paw.princeton.edu/memorial/robert-h-carlile-64"], ["William Harlow memorial (’73)", "https://paw.princeton.edu/memorial/william-h-carlile-73"], ["William Harlow obituary", "https://www.legacy.com/us/obituaries/dispatch/name/william-carlile-obituary?id=7605027"], ["Princeton Nassau Herald 1936", "https://www.e-yearbook.com/yearbooks/Princeton_University_Nassau_Herald_Yearbook/1936/Page_1.html"]], open: ["Find Mary Tarbell’s parents, birthplace, and birth/death (Tarbell is a well-documented New England family).", "Find William A. Carlile Jr.’s Columbus Dispatch obituary for 1993.", "Find the 1939 Franklin County, Ohio marriage record for William + Mary Tarbell."] },
       "william-ruth-carlile": { name: "William Arthur Carlile + Ruth Huntington Carlile", side: "Hunter’s side", confidence: "Strongly supported / family-confirmed", confidenceClass: "confirmed", lifespan: "William: 1884–1960 lead; Ruth: 1889–1975 lead", relationship: "Upstream paternal Carlile/Huntington anchors", summary: "William Arthur Carlile and Ruth Huntington Carlile are the upstream Columbus, Ohio anchors that explain much of the father-side story: the Huntington surname, Columbus roots, Princeton, Columbus Academy, Green Lawn Cemetery, Walloon Lake, and business/manufacturing clues.", facts: [["William Arthur Carlile", "Nov. 20, 1884 – Feb. 24, 1960 lead; Green Lawn Cemetery"], ["Ruth Huntington Carlile", "Sept. 13, 1889 – Oct. 5, 1975 lead; Green Lawn Cemetery"], ["Ruth’s parents", "Webster Perit Huntington + Anna Harlow Huntington"]], places: ["Columbus", "Green Lawn Cemetery", "Columbus Academy", "Walloon Lake"], why: ["Explains the recurring Huntington name.", "Provides the older Ohio foundation for the Carlile side.", "Connects cemetery, school, Princeton, and business clues."], family: ["Parents of William Arthur Carlile Jr. and John Webster Carlile", "Connected to William S. Carlile + Abbie Theresa Jane Cott Carlile lead"], sources: [["Green Lawn Cemetery", "https://www.genealogybug.net/Franklin_Cemeteries/greenlawn/h/grnlwn_h.htm"], ["Huntington genealogy PDF", "https://www.cga.ct.gov/hco/books/The_Huntington_Family_in_America.pdf"], ["John Webster memorial", "https://paw.princeton.edu/memorial/john-webster-carlile-38"], ["John Webster obituary", "https://www.hallwynne.com/obituaries/johneebster-carlile"]], open: ["Verify older Carlile and Huntington records with originals.", "Find William A. Carlile Jr.’s obituary and Mary’s maiden name."] }
     };
 
