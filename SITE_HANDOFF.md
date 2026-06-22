@@ -3,7 +3,7 @@
 ## Live site
 
 - URL: https://carlileadvisorsbot.github.io/tucker-family-history/
-- Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=11
+- Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=12
 - Password: `9898`
 - GitHub repo: `carlileadvisorsbot/tucker-family-history`
 - Local site path: `/Users/openclaw/.openclaw/workspace/genealogy/tucker-family-site`
