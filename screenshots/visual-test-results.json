@@ -1,0 +1,29 @@
+{
+  "screenshots": [
+    "screenshots/before-desktop-family-cards.png",
+    "screenshots/after-desktop-family-album.png",
+    "screenshots/before-mobile-family-cards.png",
+    "screenshots/after-mobile-family-album.png",
+    "screenshots/after-desktop-open-profile.png"
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "assertions": {
+    "lockVisibleInitially": true,
+    "unlockWorks": true,
+    "pass27Present": true,
+    "albumCards": 4,
+    "authenticLocalPortraits": 2,
+    "placeholders": 2,
+    "profileOpens": true,
+    "storyHeading": 1,
+    "escapeCloses": true,
+    "keyboardOpens": true,
+    "closeButtonWorks": true,
+    "localAssetsReachable": {
+      "count": 3,
+      "allOk": true
+    }
+  }
+}
