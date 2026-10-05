@@ -4,7 +4,7 @@
 
 - URL: https://carlileadvisorsbot.github.io/tucker-family-history/
 - Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=27-portraits
-- October 4, 2026: Tucker explicitly approved publishing the source-labeled portrait additions. Research remains Pass 27. Robert and Mary now have primary portraits, Jerry has a 2019 InkFreeNews gallery alternate, and Lena keeps the Grosse Pointe News portrait; the commercial watermarked Toledo Blade image is linked only and is not reproduced. Public-reuse permission is not established or represented as granted. Existing local preview reports remain historical receipts.
+- October 4, 2026: Tucker explicitly approved publishing the source-labeled portrait additions. Research remains Pass 27. Robert and Mary now have primary portraits, Jerry has a 2019 InkFreeNews gallery alternate, Tara has her named official Joe’s Kids portrait in the parent tree, and Lena keeps the Grosse Pointe News portrait; the commercial watermarked Toledo Blade image is linked only and is not reproduced. Public-reuse permission is not established or represented as granted. Existing local preview reports remain historical receipts.
 - Password: `9898`
 - GitHub repo: `carlileadvisorsbot/tucker-family-history`
 - Local site path: `/Users/openclaw/.openclaw/workspace/genealogy/tucker-family-site`

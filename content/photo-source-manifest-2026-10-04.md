@@ -69,6 +69,19 @@ Policy: no generated faces, face recognition, living-relative scraping, paywall 
 - **Dimensions / checksum:** 500×389 JPEG; SHA-256 `973d8472ba5a96ea5ec958e8bd4a5c13d5a65fbb18892ac15038bc6f0296d7a3`.
 - **Reuse / permission:** Source-owned editorial photography. Copyright/reuse permission is not stated. Public accessibility is not reuse permission.
 
+### Tara Carlile — authorized parent portrait added 2026-10-04
+
+- **Tree entry:** Tara Christine Nelson / Tara Carlile, Tucker’s mother.
+- **Asset:** `assets/people/tara-carlile-joes-kids.jpg`
+- **Image type:** Single-adult official-organization portrait; parent-tree thumbnail links to the full local image.
+- **Source page:** `https://www.joes-kids.org/about/board/`
+- **Source image:** `https://www.joes-kids.org/wp-content/uploads/joes-kids-tara-carlile.jpg`
+- **Caption:** Tara Carlile, pictured on the Joe’s Kids Board of Directors page.
+- **Identity matching:** The official organization page directly pairs the named portrait file with the heading Tara Carlile. Attachment record `https://www.joes-kids.org/wp-json/wp/v2/media/1548` associates the image with that board page. Local named-caption reporting corroborates the family/place context; no facial comparison was used.
+- **Authorization / privacy:** Tucker explicitly requested public parent photos and publication on October 4. Only the portrait and source credit were added. No new personal biography, health/program details, minor images, private birth dates or contact information were copied.
+- **Dimensions / checksum:** 960×960 JPEG; SHA-256 `ef5b601e0bd5589af4243e09b8e926c9c4275129fe705a1c513cff6b8648c04e`.
+- **Reuse / permission:** Joe’s Kids publishes the image. Photographer and reuse terms are not stated; no copyright permission is represented as granted.
+
 ## Included documentary image
 
 ### Allene “Lena” Carlile commemorative gym plaque
@@ -94,11 +107,11 @@ Policy: no generated faces, face recognition, living-relative scraping, paywall 
 
 ## Living/private tree entries
 
-No living-relative photos were searched or scraped.
+Public parent-photo research was explicitly authorized on October 4. No private accounts, contact directories, minors or sensitive personal information were used.
 
 - `tucker-carlile` — no photo added.
-- `andrew-hunter-carlile` — no photo added.
-- `tara-christine-nelson` — no photo added.
+- `andrew-hunter-carlile` — a third-party portrait candidate was found but is not published. The requested identity confirmation did not arrive; no identity was inferred from appearance.
+- `tara-christine-nelson` — named official Joe’s Kids portrait added with source credit; other personal details stay unchanged.
 - `joann-williams` — tasteful `J` initials state; copy explicitly says the photo remains private until supplied by family.
 
 ## Remaining interactive people/couple anchors
@@ -113,9 +126,9 @@ These remain readable, source-backed profiles without internet portraits rather 
 
 ## Counts after the 2026-10-04 additions
 
-- Genuine, contextually verified portrait assets included: **5** (four primary portraits plus Jerry’s 2019 gallery alternate)
+- Genuine, contextually verified portrait assets included: **6** (four primary album portraits, Jerry’s 2019 gallery alternate and Tara’s parent-tree portrait)
 - Documentary images included: **1**
 - Core deceased album placeholders: **0**
-- Living/private photo states: **4**
+- Living tree entries without a published portrait: **3**
 - Additional interactive deceased/couple anchors left unmatched: **5**
 - Commercial/watermarked Lena images included: **0**
