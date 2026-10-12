@@ -3,7 +3,7 @@
 ## Live site
 
 - URL: https://carlileadvisorsbot.github.io/tucker-family-history/
-- Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=27-portraits
+- Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=29-20261011
 - October 4, 2026: Tucker explicitly approved publishing the source-labeled portrait additions. Research remains Pass 27. Robert and Mary now have primary portraits, Jerry has a 2019 InkFreeNews gallery alternate, Tara has her named official Joe’s Kids portrait in the parent tree, and Lena keeps the Grosse Pointe News portrait; the commercial watermarked Toledo Blade image is linked only and is not reproduced. Public-reuse permission is not established or represented as granted. Existing local preview reports remain historical receipts.
 - Password: `9898`
 - GitHub repo: `carlileadvisorsbot/tucker-family-history`
@@ -20,6 +20,10 @@
 - Source inventory: `Data_Inventory.md`
 - Open gaps: `Open_Questions.md`
 - Research runs: `research-runs/`
+
+- October 11, 2026: Weekly Pass 29 adds direct 1891 published wording that Luther L. Tarbell was William's son and the official published soldier entry for Benjamin Tarble/Benjamin Jr. of Groton. The museum's “grandson” label and the missing direct Class No.16 link remain visible conflicts/limits. Cache-bust version: `29-20261011`. No new portraits or museum image published.
+
+- October 11, 2026: Weekly Pass 28 updates the Tarbell profile, vault history/questions/sources and footer. WH.1971.400 is explicitly a later facsimile; original Groton Sibbel death-name conflict stays unresolved. Cache-bust version: `28-20261011`. No new portraits or museum image published.
 
 ## Current site state
 
