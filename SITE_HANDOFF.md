@@ -3,7 +3,7 @@
 ## Live site
 
 - URL: https://carlileadvisorsbot.github.io/tucker-family-history/
-- Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=32-20261101
+- Current cache-bust URL: https://carlileadvisorsbot.github.io/tucker-family-history/?v=33-20261108
 - October 4, 2026: Tucker explicitly approved publishing the source-labeled portrait additions. Research remains Pass 27. Robert and Mary now have primary portraits, Jerry has a 2019 InkFreeNews gallery alternate, Tara has her named official Joe’s Kids portrait in the parent tree, and Lena keeps the Grosse Pointe News portrait; the commercial watermarked Toledo Blade image is linked only and is not reproduced. Public-reuse permission is not established or represented as granted. Existing local preview reports remain historical receipts.
 - Password: `9898`
 - GitHub repo: `carlileadvisorsbot/tucker-family-history`
@@ -97,3 +97,5 @@
 - October 25, 2026: Weekly Pass 31 adds visually verified published church entries naming Benjamin + Azubah (1762 covenant; 1763 communion). Sibbel identity remains open. Two secondary Thomas probate-file leads are labeled unverified; no original file or English-origin proof. Cache-bust: 31-20261025. No new portrait or living-person detail published.
 
 - November 1, 2026: Pass 32 adds visually verified Petersham birth entry for Azubah (June 23, 1740; Jonas + Thankfull) and corrects Thomas Jr.’s published probate locator to 22129, not 22191; Thomas 22128 independently corroborated. Original manuscripts, Sibbel identity and English origin remain open. No new public image/living-person detail. Cache-bust: 32-20261101.
+
+- November 8, 2026: Weekly Pass 33 adds catalog-only Petersham manuscript routes and Ward’s explicit Groton wording; actual birthplace and publican identity remain open. No new images or living-person details. Cache-bust: 33-20261108.
